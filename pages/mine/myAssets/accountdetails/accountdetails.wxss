@@ -1,0 +1,12 @@
+page {
+  background-color: #F4F4F4;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #F4F4F4;
+}
+.no-data-div{
+  width: 100%;
+  
+}

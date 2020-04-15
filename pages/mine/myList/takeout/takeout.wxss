@@ -1,0 +1,153 @@
+@import '../../../../assets/style/title/title.wxss';
+.twitterBlock .select_box {
+  display: flex;
+  height: 88rpx;
+}
+
+.twitterBlock .select_box .item {
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.twitterBlock .select_box .active_tag {
+  position: relative;
+}
+
+.twitterBlock .select_box .active_tag .line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4rpx;
+  background: red;
+}
+
+.twitterBlock .result_box .noneBox {
+  margin-top: 300rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.twitterBlock .result_box .noneBox image {
+  width: 248rpx;
+  height: 248rpx;
+}
+
+.twitterBlock .result_box .noneBox .text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.twitterBlock .result_box .monthBox .code {
+  margin: 20rpx 30rpx 20rpx 30rpx;
+  height: 70rpx;
+}
+
+.twitterBlock .result_box .monthBox .code .code_left {
+  float: left;
+  font-size: 30rpx;
+}
+
+.twitterBlock .result_box .monthBox .code .code_left .label {
+  display: inline-block;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.twitterBlock .result_box .monthBox .code .code_left .text {
+  display: inline-block;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.twitterBlock .result_box .monthBox .code .code_right {
+  float: right;
+  font-size: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.twitterBlock .result_box .monthBox .income {
+  display: flex;
+  height: 200rpx;
+  background: #e7492c;
+  margin: 0 30rpx;
+  border-radius: 20rpx;
+}
+
+.twitterBlock .result_box .monthBox .income .income_item {
+  flex: 1;
+  color: #ff817c;
+  text-align: right;
+}
+
+.twitterBlock .result_box .monthBox .income .income_item:nth-child(1) {
+  border-right: 1px solid #ff817c;
+  box-sizing: border-box;
+}
+
+.twitterBlock .result_box .monthBox .income .income_item .label {
+  font-size: 28rpx;
+  padding-right: 30rpx;
+  padding-top: 30rpx;
+  padding-bottom: 10rpx;
+}
+
+.twitterBlock .result_box .monthBox .income .income_item .value {
+  font-size: 44rpx;
+  color: #fff;
+  padding-right: 30rpx;
+}
+.twitterBlock .result_box .monthBox .detail{
+  margin: 0 30rpx;
+  height: 100rpx;
+}
+.twitterBlock .result_box .monthBox .detail_left{
+  float: left;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+}
+.twitterBlock .result_box .monthBox .detail_right{
+  float: right;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+
+.twitterBlock .result_box .dayBox .income {
+  display: flex;
+  height: 200rpx;
+  background: #e7492c;
+  margin: 0 30rpx;
+  border-radius: 20rpx;
+}
+
+.twitterBlock .result_box .dayBox .income .income_item {
+  flex: 1;
+  color: #ff817c;
+  text-align: right;
+}
+
+.twitterBlock .result_box .dayBox .income .income_item:nth-child(1) {
+  border-right: 1px solid #ff817c;
+  box-sizing: border-box;
+}
+
+.twitterBlock .result_box .dayBox .income .income_item .label {
+  font-size: 28rpx;
+  padding-right: 30rpx;
+  padding-top: 30rpx;
+  padding-bottom: 10rpx;
+}
+
+.twitterBlock .result_box .dayBox .income .income_item .value {
+  font-size: 44rpx;
+  color: #fff;
+  padding-right: 30rpx;
+}

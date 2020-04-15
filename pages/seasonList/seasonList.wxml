@@ -1,0 +1,20 @@
+<view class="greenlist">
+  <wxs src="../../service/num.wxs" module="tools" />
+  <nav title="四季生活卡" bind:leftFuc="goBack" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+  <view style="margin-top:{{capsuleTop+capsuleHeight+15}}px">
+    <view wx:for="{{list}}" >
+      <view style="display:flex;justify-content:space-between">
+        <view >{{item.categoryname}}</view>
+        <view style="color: #333;font-size: 15px; margin-right:30rpx; padding: 10rpx" bindtap="moreGreen" data-item="{{item}}">更多>></view>
+      </view>
+      <view style="display:flex;margin-top: 20rpx;margin-bottom: 20rpx">
+        <view wx:for="{{item.goods}}" wx:for-item="good" bindtap="goDetail" data-item="{{good}}" class="list_item">
+          <image src="{{good.imgs}}" mode="scaleToFill" class="list_img"/>
+          <view class="list_item_title">{{good.name}}</view>
+          <view class="list_item_title">¥{{tools.lessNum(good.price/100)}}</view>
+          <view style="color:#333; font-size:14px">再省{{tools.lessNum(good.disprice/100)}}元</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

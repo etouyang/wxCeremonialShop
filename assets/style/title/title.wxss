@@ -1,0 +1,16 @@
+.back_box {
+  margin-top: 50rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  font-size:28rpx;
+}
+
+.back_box .icon {
+  display: block;
+  float: left;
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 15rpx;
+}

@@ -1,0 +1,28 @@
+<view class="fapiaoContainer">
+  <wxs src="../../../service/num.wxs" module="tools" />
+  <nav title="开具发票" bind:leftFuc="goBack" titleStyle="#000" headStyle="#fff" leftImg="/images/nav/back.png" />
+  <view class='list_box' style="margin-top:{{capsuleTop+capsuleHeight+15}}px">
+    <view class="list_item" style="margin-top: 0">
+      <view class='item' style="border: none; display: block;height: 245rpx;margin-top: 13px;">
+        <text class="title">备注说明</text>
+        <textarea class="textarea" name="title" maxlength="100" placeholder="请输入备注说明" bindinput="getRemark" value="{{remark}}" />
+      </view>
+    </view>
+  </view>
+
+  <view class='list_box'>
+    <view class="list_item" style="margin:0 30rpx">
+      <view class='item' style="display: block;height: 180rpx;margin-top: 13px;">
+        <text class="title">开户行和账号</text>
+        <textarea class="textarea" name="title" maxlength="100" placeholder="请输入开户行信息" bindinput="getName" value="{{bank_name}}" />
+      </view>
+      <view class="item">
+          <input class="input" name="title" placeholder="请输入开户行账号" bindinput="getAccount" value="{{bank_account}}" />
+      </view>
+    </view>
+  </view>
+
+  <view class="add-address">
+    <view class="btn" bindtap="submitDetail">确定</view>
+  </view>
+</view>

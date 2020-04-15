@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新增地址",
+  "usingComponents": {
+    "nav": "/assets/components/normalNav/normalNav"
+  }
+}

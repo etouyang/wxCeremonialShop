@@ -1,0 +1,33 @@
+<view class="addressBlock">
+  <nav title="常用地址管理" bind:leftFuc="goBack" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+  <view wx:if="{{addressList.addrlist && addressList.addrlist.length > 0 }}" class='list_box' style="margin-top:{{capsuleTop+capsuleHeight+15}}px">
+    <view wx:for="{{addressList.addrlist}}" class="list_item" data-id="{{item.adid}}" bindtap="tagChoose">
+        <view class="address-title">收货人</view>
+        <view class="address-name">
+          <text >{{item.uname}}</text>
+          <text >{{item.phone}}</text>
+        </view>
+        <view class="address-detail">{{item.detail}}</view>
+        <view class="line-space"/>
+        <view class="address-bottom">
+          <view class="address-default">
+            <checkbox-group bindchange="changeDefault" data-bindex='{{item.adid}}'>
+              <checkbox checked="{{item.isdefault == '1' ? true : false}}"/>
+            </checkbox-group>
+            <view >{{item.isdefault === '1' ? '默认地址' : '设为默认'}}</view>
+          </view>
+          <view >
+            <image class='edit' src='../../../../images/mine/edit.png' alt="" bindtap="editAddress" data-bindex='{{item.adid}}'/>
+            <image class='edit' src='../../../../images/mine/delete.png' alt="" bindtap="delAddress" data-bindex='{{item.adid}}'/>
+          </view>
+        </view>
+    </view>
+  </view>
+  <view wx:else class="no-data-div">
+        <image src="/images/common/no-data.png" mode="aspectFit" class="no-data"/>
+        <view class="no-data-tips">暂无收货地址</view>
+    </view>
+  <view class="add-address">
+    <view class="btn" bindtap="addNewAddress">新增收货地址</view>
+  </view>
+</view>

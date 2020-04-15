@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="searchView" style="margin-top:{{capsuleTop}}px">
+        <search class="searchContainer" disabled="true" bind:addclick="onclick" />
+        <image src="/images/shopping/ico-ting-d.png" class="msgImg" bindtap="rightFuc"/>
+    </view>
+    <view class="list-container">
+        <scroll-view class="nav_left" style="height:{{windowHeight - capsuleTop - 35 - 8}}px" scroll-y="true">
+            <block wx:for="{{prolist.classifyItems}}" wx:key="{{index}}">
+                <view class="nav_left_items {{curNav == item.categoryid ? 'active' : ''}}" bindtap="switchRightTab" data-item="{{item}}">
+                    <view class="left_space">
+                        <view class="indicate {{curNav == item.categoryid ? 'active' : ''}}"/>
+                        <view class="txt_left_container">
+                            <text >{{item.categoryname}}</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+        <scroll-view class="nav_right" style="height:{{windowHeight - capsuleTop - 35 - 8}}px" scroll-y="true" scroll-into-view="{{itemScrollId}}" scroll-with-animation="true">
+            <view wx:for="{{perGoods}}" wx:key="{{index}}" class="item" id="{{'A' + item.categoryid}}" style="width:{{screenWidth*0.76 - 10}}px">
+                <!-- <view wx:for="{{item.goods}}" wx:key="{{index}}" class="item" wx:for-item="good"> -->
+                    <pro-item data-item='{{item}}' bindtap="onJumpDetailpro" goodDetaill="{{item}}"/>
+                    <!-- <view style="background-color: red; width: 50px; height:50px">{{good.name}}</view> -->
+                <!-- </view> -->
+            </view>
+        </scroll-view>
+    </view>
+</view>

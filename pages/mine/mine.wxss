@@ -1,0 +1,185 @@
+page {
+  background-color: #f3f3f3;
+}
+.mineBlock {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: #f3f3f3;
+}
+
+.mine_top {
+  width: 100%;
+  height: 460rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.mine_top .img{
+  width: 100%;
+  height: 460rpx;
+  position: absolute;
+}
+
+.mine_top .userinfo {
+  margin-top: 120rpx;
+  margin-left: 20rpx;
+  float: left;
+  height: 60rpx;
+  z-index: 10;
+}
+
+.mine_top .userset {
+  margin-top: 160rpx;
+  margin-right: 30rpx;
+  float: right;
+  z-index: 10;
+}
+
+.mine_top .userset .set {
+  display: inline-block;
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 30rpx;
+}
+
+.mine_top .userset .bell {
+  display: inline-block;
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.mine_top .userinfo .userinfo-avatar {
+  float: left;
+  width: 120rpx;
+  height: 120rpx;
+  display: inline-block;
+  border-radius: 60rpx;
+}
+.mine_top .userinfo .button {
+  width: 340rpx;
+  height: 120rpx;
+  position: absolute;
+  opacity: 0;
+}
+
+.mine_top .userinfo span {
+  display: inline-block;
+  margin-top: 26rpx;
+  margin-left: 5rpx;
+  color: #fff;
+}
+
+.mine_content {
+  margin: -200rpx 30rpx 0;
+  z-index: 10;
+}
+
+.mine_content .my_item {
+  height: 200rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.mine_content .my_item .title_box {
+  position: relative;
+  height: 40rpx;
+  font-size: 30rpx;
+}
+
+.mine_content .my_item .title_box .title_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 26rpx;
+  color: red;
+}
+
+.mine_content .my_ad {
+  height: 200rpx;
+  background: green;
+  margin: 40rpx 0;
+}
+
+.mine_content .my_item .property_box {
+  display: flex;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.mine_content .my_item .property_box .item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+  align-items: center;
+}
+
+.mine_content .my_item .property_box .item .icon {
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.mine_content .my_item .property_box .item .text {
+  font-size: 12px;
+}
+
+.mine_content .my_item .order_box {
+  display: flex;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.mine_content .my_item .order_box .item {
+  display: flex;
+  flex-direction: column;
+  min-width: 150rpx;
+  flex:1;
+  text-align: center;
+  align-items: center;
+}
+
+.mine_content .my_item .order_box .item .icon {
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.mine_content .my_item .order_box .item .text {
+  font-size: 12px;
+}
+
+.mine_content .my_list .list_item {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  padding: 15rpx 0 15rpx 40rpx;
+}
+
+.mine_content .my_list .list_item .item_right {
+  float: right;
+  width: 46rpx;
+  height: 46rpx;
+  margin-top: 6rpx;
+}
+
+.shop-swiper {
+  width: 100%;
+  height: 220rpx;
+  margin: 30rpx 0rpx;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.session {
+  /* color: #1aad19; */
+  color: #fff;
+  font-size: 14px;
+  background-color: #c9c9c9;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  margin-left: 20rpx;
+}

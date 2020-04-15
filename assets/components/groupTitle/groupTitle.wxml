@@ -1,0 +1,18 @@
+<view class="groupTitle">
+    <view class="group-title">
+        <text style="z-index: 10">{{title}}</text>
+    </view>
+    <view wx:if="{{type === 'default' || type === 'group'}}" class="{{type === 'default' ? 'group-default' : 'group-gr'}}" bindtap="moreFuc">
+        <view class="box">
+            <view class="{{type === 'default' ? 'time-show' : 'time-show-gr'}}" >{{timeShow}}点场</view>
+            <view class="{{type === 'default' ? 'time-last-se' : 'time-last'}}" >
+                <text style="flex:1;display:flex;justify-content:center">{{timeDes ? timeDes : '已结束'}}</text>
+                <image src="/images/common/ar-2.png" style="width:10px;height:10px;margin-right:3px;"/>
+            </view>
+        </view>
+    </view>
+    <view wx:elif="{{type !== 'detail' }}" class="group-more" bindtap="moreFuc" >
+        <text style="flex:1;display:flex;justify-content:center;align-items:center">更多</text>
+        <image src="/images/common/ar-2.png" style="width:18px;height:18px;margin-right:3px;"/>
+    </view>
+</view>

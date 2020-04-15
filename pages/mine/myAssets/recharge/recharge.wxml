@@ -1,0 +1,18 @@
+<view class="couponBlock">
+  <view class='back_box'>
+    <image bindtap='goBack' class="icon" src='../../../../images/nav/back.png' alt=""></image>
+    <span>充值</span>
+  </view>
+  <view class="select_box">
+    <view wx:for="{{selectArray}}" class="item {{currentItem==item.id?'active_tag':''}}" data-id="{{item.id}}" bindtap="tagChoose">{{item.text}}
+      <span class="line"></span>
+    </view>
+  </view>
+  <view class='result_box'>
+    <view class='noneBox'>
+      <image src='../../../../images/mine/none.png'></image>
+      <view class='text'>暂无优惠券</view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,16 @@
+<view >
+  <view class='back_box' bindtap='goBack' style="height:{{capsuleTop+capsuleHeight}}px;">
+    <image bindtap='goBack' class="icon" src='../../../images/nav/back.png' alt=""></image>
+    <span>订单跟踪</span>
+  </view>
+  <view class="box">
+    <view >订单编号号: {{orderid}}</view>
+    <view >订单状态: {{ordermsg}}</view>
+  </view>
+  <view class="box" style="display:flex">
+    <view wx:for="{{orderstatusstr}}">
+      <text >{{item.title}}</text>
+      <text wx:if="{{orderstatusstr.length > 1 && index !== orderstatusstr.length-1}}">{{' <--- '}}</text>
+    </view>
+  </view>
+</view>

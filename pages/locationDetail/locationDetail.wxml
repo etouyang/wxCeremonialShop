@@ -1,0 +1,23 @@
+<view class="container">
+    <wxs src="../../service/num.wxs" module="tools" />
+    <nav title="选择地址" bind:leftFuc="goBack" titleStyle="#000" leftImg="/images/nav/back.png" />
+    <view class="locationDetailContainer" style="margin-top:{{capsuleTop+capsuleHeight}}px" bindtap="onclick">
+        <view class="location_bar">
+            <view style="display:flex; align-items: center">
+                <text class="citySelect">{{city.title}}</text>
+                <view style="margin: 0 20rpx; color: #666">|</view>
+                <icon type='search' size="16"></icon>
+            </view>
+            <view style="width:130px">
+                <input type="text"  confirm-type='search' placeholder='请输入小区名字' style="margin-left:10px;" value="{{keyword}}" bindinput="keyworldInput"/>
+            </view>
+        </view>
+        <view style="color:#1296db;margin-left:10rpx; font-size:15px" bindtap="clearInput">取消</view>
+    </view>
+    <view style="margin-top: 30rpx">
+        <view wx:for="{{list}}" class="areaItem" bindtap="changeArea" data-item="{{item}}">
+            <view style="font-size: 15px; font-weight:bold">{{item.area}}</view>
+            <view style="color:#555">{{item.detail}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,67 @@
+/* components/swiper/swiper.wxss */
+.appraiseWrap{
+  position: relative;
+}
+.nameContainer {
+  width: calc( 100% - 30rpx * 2 );
+  height: 45rpx;
+  display: flex;
+  align-items: center;
+  margin: 0 30rpx 10rpx;
+}
+.head {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 22.5rpx;
+  background-color: aqua;
+}
+.name {
+  font-size: 12px;
+  color: #000000;
+  margin: 0 10rpx;
+  height: 45rpx;
+  display: flex;
+  align-items: center;
+}
+.starContainer {
+  display: flex;
+  align-items: center;
+  height: 45rpx;
+}
+.star {
+  width: 34rpx;
+  height: 34rpx;
+}
+.time {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 10px;
+  color: #666666;
+}
+.des {
+  background-color: #fff;
+  border-radius: 10rpx;
+  height: auto;
+  width: calc( 100% - 30rpx * 2 );
+  display: flex;
+  align-items: center;
+  margin: 0 30rpx;
+  flex-direction: column;
+}
+.container {
+  width: calc( 100% - 20rpx * 2 );
+  padding: 20rpx;
+  font-size: 12px;
+  color: #666666;
+}
+.imgContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.image {
+    width: 130rpx;
+    height: 130rpx;
+    margin-left: 25rpx;
+}

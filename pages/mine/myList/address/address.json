@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "常用地址管理",
+  "usingComponents": {
+    "nav": "/assets/components/normalNav/normalNav"
+  }
+}

@@ -1,0 +1,69 @@
+<view class="twitterBlock">
+  <view class='back_box'>
+    <image bindtap='goBack' class="icon" src='../../../../images/nav/back.png' alt=""></image>
+    <span>推客</span>
+  </view>
+  <view class="select_box">
+    <view wx:for="{{selectArray}}" class="item {{currentItem==item.id?'active_tag':''}}" data-id="{{item.id}}" bindtap="tagChoose">{{item.text}}
+      <span class="line"></span>
+    </view>
+  </view>
+  <view class='result_box'>
+    <view class='noneBox' wx:if="{{showNone}}">
+      <image src='../../../../images/mine/none.png'></image>
+      <view class='text'>暂无优惠券</view>
+    </view>
+    <view class='monthBox'>
+      <view class='code'>
+        <view class='code_left'>
+          <view class='label'>我的邀请码</view>
+          <view class='text'>r29f</view>
+        </view>
+        <view class='code_right'>去提现>></view>
+      </view>
+      <view class='income'>
+        <view class='income_item'>
+          <view class='label'>
+            本月结算预估收入
+          </view>
+          <view class='value'>
+            $1.00
+          </view>
+        </view>
+        <view class='income_item'>
+          <view class='label'>
+            上月结算预估收入
+          </view>
+          <view class='value'>
+            $1.00
+          </view>
+        </view>
+      </view>
+      <view class='detail'>
+        <view class='detail_left'>订单明细</view>
+        <view class='detail_right'>></view>
+      </view>
+    </view>
+    <view class='dayBox'>
+      <view class='income'>
+        <view class='income_item'>
+          <view class='label'>
+            今日结算预估收入
+          </view>
+          <view class='value'>
+            $1.00
+          </view>
+        </view>
+        <view class='income_item'>
+          <view class='label'>
+            昨日结算预估收入
+          </view>
+          <view class='value'>
+            $1.00
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

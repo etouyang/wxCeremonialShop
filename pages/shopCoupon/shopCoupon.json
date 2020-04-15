@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "nav": "/assets/components/normalNav/normalNav",
+        "coupon": "/assets/components/coupon/coupon"
+    }
+}

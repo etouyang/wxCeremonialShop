@@ -1,0 +1,21 @@
+<view class="item {{(type === 'used' || type === 'outTime') ? 'opacity' : ''}}">
+    <wxs src="../../../service/num.wxs" module="tools" />
+    <view class="top">
+        <view class="left">
+            <text class="title">{{item.name}}</text>
+            <text class="des">{{item.typename}}</text>
+            <text class="time">{{item.startedtime}} - <text >{{item.endedtime}}</text></text>
+        </view>
+        <view class="right">
+            <text style="font-size:30px;"><text style="font-size:12px;">¥</text>{{tools.lessNum(item.money/100)}}</text>
+            <text class="name">{{item.name}}</text>
+        </view>
+    </view>
+    <view class="mid">
+        <text class="class">{{item.remark}}</text>
+        <view class="btn" wx:if="{{type === 'default'}}">领取</view>
+        <view class="btn" wx:if="{{type === 'unUsed'}}">去使用</view>
+        <view class="btn used" wx:if="{{type === 'used'}}">已使用</view>
+        <view class="btn used" wx:if="{{type === 'outTime'}}">已过期</view>
+    </view>
+</view>

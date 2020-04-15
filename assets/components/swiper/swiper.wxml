@@ -1,0 +1,18 @@
+<!--components/swiper/swiper.wxml-->
+<view class="wrap">
+    <swiper autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange" bindanimationfinish="animationChange" class="swiper-img-container">
+        <block wx:for="{{imgUrls}}" wx:key="unique">
+            <swiper-item>
+                <navigator url="{{item.url}}" hover-class="navigator-hover" class="swiper-img-container">
+                    <image src="{{item.imgadd}}" class="slide-image" mode="widthFix" referrer="no-referrer|origin|unsafe-url"/>
+                    <!-- <image-loader defaultImage="/images/common/loader.png" mode="scaleToFill" originalImage="{{item.imgadd}}" class="slide-image"/> -->
+                </navigator>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="dots" wx:if="{{imgUrls.length != 1}}">
+        <block wx:for="{{imgUrls}}" wx:key="unique">  
+            <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>  
+        </block>  
+    </view> 
+</view>

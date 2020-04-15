@@ -1,0 +1,32 @@
+<!-- <swiper 
+    indicator-dots="{{indicatorDots}}" 
+    autoplay="{{autoplay}}" 
+    interval="{{interval}}" 
+    duration="{{duration}}" 
+    indicator-color="{{indicatorColor}}" 
+    indicator-active-color="{{activeColor}}"
+    class="service-module"
+>
+    <block wx:for="{{items}}" wx:key="unique">
+        <swiper-item class="container">
+            <view wx:for="{{item}}" wx:for-item="ite" class="item" wx:key="unique">
+                <view class="itemBtn" bindtap='search' data-bindex='{{index}}'>
+                    <image src="{{ite.imageurl}}" class="slide-image" mode="scaleToFill" referrer="no-referrer|origin|unsafe-url"/>
+                    <view class="txt">{{ite.name}}</view>
+                </view>
+            </view>
+        </swiper-item>
+    </block>
+</swiper> -->
+<view class="service-module">
+    <block wx:for="{{items}}" wx:key="unique">
+        <view class="container">
+            <view wx:for="{{item}}" wx:for-item="ite" class="item" wx:key="unique">
+                <view class="itemBtn" bindtap='search' data-bindex='{{index}}'>
+                    <image src="{{ite.imageurl}}" class="slide-image" mode="scaleToFill" referrer="no-referrer|origin|unsafe-url"/>
+                    <view class="txt">{{ite.name}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view> 

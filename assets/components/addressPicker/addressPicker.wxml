@@ -1,0 +1,5 @@
+<view class='com-selectBox'>
+    <view class='com-sList'>
+        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='' class='com-sItem' bindtap='choiceAddress'>{{item.area}}</view>
+    </view>
+</view>

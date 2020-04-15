@@ -1,0 +1,95 @@
+/* components/swiper/swiper.wxss */
+.timesWrap{
+    position: relative;
+    height: 185rpx;
+}
+.timeContainer {
+  margin: 0rpx 27rpx;
+}
+.itemsContainer {
+  margin-left: 25rpx;
+  width: calc( 100% - 50rpx );
+  height: 95rpx;
+  white-space: nowrap;
+  display: flex;
+}
+.itemFor {
+  display: flex;
+  justify-content: space-between;
+}
+.item {
+  /* width:20%;
+  height: 95rpx;
+  display: inline-block; */
+  width: 55px;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.itemClosed {
+  width: 55px;
+  height: 90rpx;
+  position: relative;
+  opacity: 0.5;
+}
+.itemNow {
+  width: 55px;
+  height: 90rpx;
+  position: relative;
+}
+.itemTitle {
+  font-size: 17px;
+  height: 40%;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  /* opacity: 0.5; */
+}
+.itemSubTitle {
+  font-size: 14px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  /* opacity: 0.5; */
+}
+.itemTitleNow {
+  font-size: 16px;
+  font-weight: bold;
+  height: 50%;
+  margin-top: -10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.itemSubTitleNow {
+  font-size: 12px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.lastTime {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.lastTimeShow {
+  width: 210rpx;
+  height: 45rpx;
+  font-size: 12px;
+  background-color: #fff;
+  border-radius: 22.5rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF353F;
+}

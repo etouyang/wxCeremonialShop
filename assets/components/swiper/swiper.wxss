@@ -1,0 +1,39 @@
+/* components/swiper/swiper.wxss */
+.wrap{
+    position: relative;
+    height: 100%;
+}
+.swiper-img-container {
+  width: 100%;
+  height: 100%;
+}
+.slide-image {
+    width: calc( 100% - 30rpx * 2 );
+    /* height: calc( 100% - 40rpx ); */
+    margin-left: 30rpx;
+    border-radius: 20rpx;
+}
+.dots{  
+    width: calc( 100% - 5rpx );
+    height: 10rpx; 
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0rpx;
+    left: 5rpx;
+    justify-content: center;
+}  
+  /*未选中时的小圆点样式 */
+.dot{
+    width: 10rpx;  
+    height: 10rpx;   
+    border-radius: 5rpx;
+    margin-right: 10rpx;
+    background-color: gray;
+}  
+  /*选中以后的小圆点样式  */
+.active{
+    width: 20rpx;   
+    height: 10rpx;
+    background-color: coral;
+}

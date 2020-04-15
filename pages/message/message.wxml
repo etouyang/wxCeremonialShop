@@ -1,0 +1,24 @@
+<view class="container">
+    <nav title="消息" bind:leftFuc="leftFuc" titleStyle="#000" leftImg="/images/nav/back.png" />
+    <view wx:if="{{products.length}}">
+        <view class="shop-container-detail">
+            <view class="shop-container-item">
+                <view wx:for="{{productsLeft}}"  wx:key="{{index}}" class="shop-left-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                </view>
+            </view>
+            <view class="shop-container-item">
+                <view wx:for="{{productsRight}}"  wx:key="{{index}}" class="shop-right-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="showImg">
+            <image class="img" src="/images/common/pic-s1.png"/>
+            <text class="imgTitle">暂无消息</text>
+        </view>
+    </view>
+
+</view>

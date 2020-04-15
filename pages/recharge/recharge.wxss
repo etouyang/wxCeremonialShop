@@ -1,0 +1,93 @@
+page {
+  background-color: #F4F4F4;
+}
+.recharge-container {
+  width: calc( 100% - 60rpx );
+  height: 300rpx;
+  margin: 30rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+}
+.recharge-container .recharge-top {
+  width: calc( 100% - 60rpx );
+  margin: 0 30rpx;
+  height: 130rpx;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+.moneyInput {
+  width: 300rpx;
+  text-align: right;
+  margin-right:20rpx;
+  font-size: 28px;
+  color: #F24842;
+}
+.recharge-way {
+  font-size: 10px;
+  color: #999;
+  margin: 30rpx 30rpx 0;
+}
+.wx-content {
+  margin: 20rpx 40rpx 10rpx 30rpx;
+  font-size: 15px;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+.wxImg {
+  width: 60rpx;
+  height: 60rpx;
+}
+.check-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.add-address {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+.add-address .btn {
+  width: calc( 100% - 60rpx );
+  height: 76rpx;
+  font-size: 15px;
+  color: #fff;
+  margin-left: 30rpx;
+  margin-bottom: 15rpx;
+  border-radius: 38rpx;
+  background: linear-gradient(to right, #FC8259, #F24842);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* checkbox未选中时样式  */
+checkbox .wx-checkbox-input{
+  border-radius: 50%;
+  height: 34rpx;
+  width: 34rpx;
+  margin-top: -4rpx; 
+}
+/* checkbox选中时样式 */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  background: #FF6C5E;
+  border: 1px solid #FF6C5E;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 34rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 34rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 34rpx;
+  text-align: center;
+  font-size:23rpx; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-48%, -48%) scale(1);
+  -webkit-transform:translate(-48%, -48%) scale(1);
+}

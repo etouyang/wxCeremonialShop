@@ -1,0 +1,71 @@
+.wrapper {
+  width: 100%;
+}
+.tit_seabox{
+  width: 100%;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.location {
+  width: 80%;
+  position: absolute;
+  z-index: 10;
+  margin-top: -72rpx;
+}
+.tit_seabox_bar{
+  width: calc( 100% - 32rpx );
+  height: 69rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 10rpx;
+  background: #fff;
+  padding-left: 32rpx;
+}
+/*有权限添加活动*/
+.tit_seabox_bar.tit_seabox_add{
+  width:calc( 100% - 120rpx );
+}
+/*开始搜索时*/
+.tit_seabox_bar.tit_start_search{
+  width: calc( 100% - 45rpx );
+}
+/*开始搜索且有权限添加*/
+.tit_seabox_bar.tit_start_search.tit_seabox_add{
+width:calc( 100% - 120rpx );
+}
+.tit_seabox_bar icon{
+  margin-right: 20rpx;
+}
+.tit_seabox input{
+  height:60rpx;
+  line-height:60rpx;
+  font-size:28rpx;
+  width:100%;
+  margin-right:32rpx;
+}
+.activity_add{
+  width:60rpx;
+  text-align:right;
+  border-left:4rpx solid #f2f2f2;
+  margin-left:20rpx;
+
+}
+.activity_add image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.activity_seabtn{
+  font-size: 16px;
+  width: 75rpx;
+  margin-left: 20rpx;
+  /* text-align: right; */
+  color: #FF6C5E;
+}
+.input_foce {
+  border: 1px solid #FF6C5E;
+}
+.input_key {
+  color: #FF6C5E;
+}

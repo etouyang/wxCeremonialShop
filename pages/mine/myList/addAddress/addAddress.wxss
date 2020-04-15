@@ -1,0 +1,151 @@
+@import '../../../../assets/style/title/title.wxss';
+
+page {
+  background-color: #f2f2f2;
+  height: 100%;
+}
+.add {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+}
+.add .list_box {
+  width: calc( 100% - 60rpx );
+  margin: 30rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+}
+.list_box .piece {
+  width: calc( 100% - 60rpx );
+  margin-left: 30rpx;
+  height: 120rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  display: flex;
+  align-items: center;
+}
+.list_box .input {
+  font-size: 14px;
+  color: #333;
+  width: calc( 100% - 60rpx );
+}
+.list_box .picker {
+  font-size: 14px;
+  color: #333;
+  width: calc( 100% - 5rpx );
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.list_box .other {
+  font-size: 14px;
+  color:#e2e2e2;
+}
+.list_box .select {
+  font-size: 14px;
+  columns: #333333;
+}
+.list_box .item_right {
+  float: right;
+  width: 46rpx;
+  height: 46rpx;
+  margin-top: 6rpx;
+  margin-left: -20rpx;
+}
+.list_box .piece-detail {
+  width: calc( 100% - 60rpx );
+  margin-left: 30rpx;
+  height: 230rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.list_box .piece-detail .piece-des {
+  font-size: 12px;
+  color: #F63A29;
+  display: flex;
+  justify-content: space-between;
+}
+.list_box .address-default {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  margin-left: 30rpx;
+  height: 110rpx;
+}
+.add .add-address {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+.add .add-address .btn {
+  width: calc( 100% - 60rpx );
+  height: 76rpx;
+  font-size: 15px;
+  color: #fff;
+  margin-left: 30rpx;
+  margin-bottom: 15rpx;
+  border-radius: 38rpx;
+  background: linear-gradient(to right, #FC8259, #F24842);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* checkbox未选中时样式  */
+checkbox .wx-checkbox-input{
+  border-radius: 50%;
+  height: 34rpx;
+  width: 34rpx;
+  margin-top: -4rpx; 
+}
+/* checkbox选中时样式 */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  background: #FF6C5E;
+  border: 1px solid #FF6C5E;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 34rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 34rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 34rpx;
+  text-align: center;
+  font-size:23rpx; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-48%, -48%) scale(1);
+  -webkit-transform:translate(-48%, -48%) scale(1);
+}
+.tag-container {
+  width: calc( 100% - 60rpx );
+  height: 160rpx;
+  margin-left: 30rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.tag-txt {
+  font-size: 10px;
+  color: #999999;
+  margin-top: 30rpx;
+}
+.tag-select {
+  display: flex;
+  font-size: 12px;
+  color: #333333;
+}
+.tag-piece {
+  width: 130rpx;
+  height: 50rpx;
+  margin: 30rpx 20rpx 0 0;
+  background-color: #F8F8F8;
+  border-radius: 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

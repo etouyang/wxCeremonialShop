@@ -1,0 +1,22 @@
+<view class="groupWrap">
+    <wxs src="../../../service/num.wxs" module="tools" />
+    <view class="groupContainer" bindtap="onJump">
+        <image src="{{item.imgs[0]}}" mode="scaleToFill" class="image"/>
+        <view class="timeContainer">
+            <view class="finish-rate">距结束</view>
+            <text class="time-dec">{{timeDes}}</text>
+        </view>
+        <view class="title-des">
+            <!-- {{type === 'default' ? '已抢件' : '-人拼'}} -->
+            <text wx:if="{{type === 'default'}}">已抢{{item.sales}}件</text>
+            <text wx:else>{{item.sales}}人拼</text>
+            <text class="title-price">¥{{tools.lessNum(item.cprice/100)}}</text>
+        </view>
+        <view class="subtitle">¥{{tools.lessNum(item.market_price/100)}}</view>
+        <view class="groupBtnContainer">
+            <view class="groupBtn">
+                {{type === 'default' ? '马上抢 >' : '去团购 >'}}
+            </view>
+        </view>
+    </view>
+</view>

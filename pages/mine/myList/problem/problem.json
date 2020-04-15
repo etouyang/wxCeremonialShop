@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "nav": "/assets/components/normalNav/normalNav"
+  }
+}

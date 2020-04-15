@@ -1,0 +1,16 @@
+var lessNum = function (val) {
+    if (!val || val == '0') return '0.00'
+    return Number(val).toFixed(2)
+}
+var detailNum = function (goods) {
+  var num = 0;
+  goods.forEach(function(good){
+    num += parseInt(good.num)
+  })
+  return num
+}
+  
+module.exports = {
+    lessNum: lessNum,
+    detailNum: detailNum
+}

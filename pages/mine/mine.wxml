@@ -1,0 +1,56 @@
+<view class='mineBlock'>
+  <view class='mine_top'>
+    <image class='img' src="/images/shopping/bg1.png" />
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{hasRegisterUserInfo && registerUserInfo.uimg ? registerUserInfo.uimg : '/images/mine/nologin.png'}}" background-size="cover" bindtap="login"/>
+      <span bindtap="login">{{hasRegisterUserInfo ? registerUserInfo.nickName : '暂未登录'}}</span>
+      <text class="session" wx:if="{{hasRegisterUserInfo}}" bindtap="goSession">四季卡</text>
+    </view>
+    <view class="userset">
+      <!-- <image class='set' src="/images/mine/set.png" bindtap='openUrl' data-id='1'></image> -->
+      <image class='bell' src="/images/shopping/ico-ting-w.png" bindtap='rightFuc' data-id='2'></image>
+    </view>
+  </view>
+  <view class='mine_content'>
+    <view class='my_item'>
+      <view class="title_box" bindtap='goUrl' data-id='1'>
+        <span>{{propertyTitle1}}</span>
+        <span class="title_right">{{propertyTitle2}}</span>
+      </view>
+      <view class='property_box'>
+        <view class='item' wx:for="{{propertyArray}}" wx:key="{{index}}">
+          <view bindtap='goProperty' data-id='{{index+1}}'>
+            <image class="icon" src="{{item.image}}" background-size="cover"></image>
+            <view class='text'>{{item.text}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='my_item'>
+      <view class="title_box" bindtap='goUrl' data-id='2'>
+        <span>{{orderTitle1}}</span>
+        <span class="title_right">{{orderTitle2}}</span>
+      </view>
+      <view class='order_box'>
+        <view class='item' wx:for="{{orderArray}}" wx:key="{{index}}">
+          <view bindtap='goProperty' data-id='{{index+5}}'>
+            <image class="icon" src="{{item.image}}" background-size="cover"></image>
+            <view class='text'>{{item.text}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="shop-swiper" wx:if="{{mineAd.length}}" >
+      <my-swiper imgUrls="{{mineAd}}" class="swiper"/>
+    </view>
+    <view class='my_list'>
+      <view class="list_item" wx:for="{{listArray}}" wx:key="{{index}}">
+        <view bindtap='goProperty' data-id='{{index+13}}'>
+          <span class="item_left">{{item.text}}</span>
+          <!-- <span class="item_right">></span> -->
+          <image src="/images/common/ar-5.png" class="item_right"/>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

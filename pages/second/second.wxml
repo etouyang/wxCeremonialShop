@@ -1,0 +1,11 @@
+<view class="container">
+    <nav title="{{'限时秒杀'}}" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#fff" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+    <view class="headContainer">
+        <times-item class="timeContainer" times="{{timeList}}" timerDes="{{timeDesSecond}}" currentIdx="{{currentIdx}}" bind:selectIdx="selectIdx"/>
+    </view>
+    <view class="secondItemContainer"> 
+        <view wx:for="{{secondList}}" wx:key="{{index}}" class="secondItem">
+            <second-item item="{{item}}" bind:gotoSecond="gotoSecond" data-bindex='{{index}}'/>
+        </view>
+    </view>
+</view>

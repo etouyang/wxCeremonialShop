@@ -1,0 +1,24 @@
+<view class="buyWrap" style="position:fixed; bottom:0;width: 750rpx;">
+    <view class="container">
+        <view class="leftContainer">
+            <view class="fast-button" bindtap="shopStore">
+                <image src="/images/goods/shopping-store.png" class="img" />
+                <view style="color: #FF6C5E;">店铺</view>
+            </view>
+            <button class="fast-button kefuContainer" open-type="contact">
+                <image src="/images/goods/kefu.png" class="img" />
+                <view>客服</view>
+            </button>
+            <view class="fast-button button-cart" bindtap="gotoCar">
+                <image src="/images/goods/shoppingcar.png" class="img"  />
+                <view>购物车</view>
+                <view wx:if="{{goodsNum && goodsNum > 0 && goodsNum <= 100}}" class="cart-num">{{goodsNum}}</view>
+                <view wx:elif="{{goodsNum && goodsNum >100}}" class="cart-num">100+</view>
+            </view>
+        </view>
+        <view class="txtContainer">
+            <view class="addCar" bindtap="addCar">加入购物车</view>
+            <view class="buy" bindtap="buyNow">立即购买</view>
+        </view>
+    </view>
+</view>

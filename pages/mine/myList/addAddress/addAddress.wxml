@@ -1,0 +1,46 @@
+<view class="add">
+  <nav title="{{address ? '编辑地址' : '新增地址'}}" bind:leftFuc="goBack" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="{{address ? '/images/mine/delete.png' : ''}}"/>
+  <view class='list_box' style="margin-top:{{capsuleTop+capsuleHeight+15}}px">
+    <view class="piece">
+      <input class="input" placeholder="收货人姓名" placeholder-style="color:#e2e2e2;" bindinput="bindNameInput" value="{{uname}}"/>
+    </view>
+    <view class="piece">
+      <input class="input" maxlength="11" type="number" placeholder="收货人电话号码" placeholder-style="color:#e2e2e2;" bindinput="bindPhoneInput" value="{{phone}}"/>
+    </view>
+    <view class="piece">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class="picker">
+        <view class="select" wx:if="{{region[0] !== ''}}" style="width:{{width - 30}}px">
+          {{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+        <view class="other" wx:else style="width:{{width - 30}}px">
+          省/市/行政区
+        </view>
+      </picker>
+      <image src="/images/common/ar-5.png" class="item_right"/>
+    </view>
+    <view class="piece-detail">
+      <textarea class="input" style="margin-top:17px;" maxlength="60" placeholder="请填写小区、街道、门牌等详细信息" placeholder-style="color:#e2e2e2;" bindinput="bindDetailInput" value="{{detail}}"/>
+      <view class="piece-des" style="margin-bottom:12px;">
+        <text >提示：地址填写不详细导致的无法送货，将转为自提</text>
+        <text >{{num}}<text style="color:#999;">/60</text></text>
+      </view>
+    </view>
+    <view class="tag-container">
+      <text class="tag-txt">标签</text>
+      <view class="tag-select">
+        <block wx:for="{{tag}}">
+          <view class="tag-piece" style="background-color:{{selectTag == index ? '#FFF6F7' : '#F8F8F8'}}; color:{{selectTag == index ? '#F63A29' : '#333333'}}" bindtap="tagSelect" data-item="{{item}}">{{item.name}}</view>
+        </block>
+      </view>
+    </view>
+    <view class="address-default">
+      <checkbox-group bindchange="switchChange" >
+        <checkbox checked="{{isdefault == '1'}}"/>
+      </checkbox-group>
+      <view >{{isdefault == '1' ? '默认地址' : '设为默认'}}</view>
+    </view>
+  </view>
+  <view class="add-address">
+    <view class="btn" bindtap="upload">确定</view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<view class="twitterBlock">
+  <view class='back_box'>
+    <image bindtap='goBack' class="icon" src='../../../../images/nav/back.png' alt=""></image>
+    <span>外卖订单</span>
+  </view>
+  
+</view>

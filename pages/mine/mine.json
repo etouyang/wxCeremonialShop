@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "my-swiper": "/assets/components/swiper/swiper"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

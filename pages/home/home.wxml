@@ -1,0 +1,79 @@
+<view class="home">
+    <view class="home-head" >
+        <image src="{{homeBg}}" class="headBg" />
+        <view class="locationContainer" style="margin-top:{{capsuleTop}}px; height:{{capsuleHeight}}px">
+            <view class="locationBtn" bindtap="showAddressFlag" style="height:{{capsuleHeight}}px">
+                <image class="locationImg" src="/images/goods/location.png"/>
+                送至: {{area.area ? area.area : '-'}}
+                <!-- <image class="locationImg" src="/images/goods/down.png"/> -->
+            </view>
+            <image class="locationImg msgshow" src="/images/goods/bell.png" mode="aspectFit" bindtap="rightFuc"/>
+        </view>
+        <address-picker prop-array='{{selectArray}}' bind:choiceAddress='getSelectAddress' style="margin-left: 30rpx;" wx:if="{{showSelect}}"/>
+        <!-- <search class="searchContainer"  disabled="true" bind:addclick="onclick" searchflag="false" style="margin-bottom:25px;"/> -->
+        <view class="searchContainer" style="margin-bottom:25px;" bindtap="onclick">
+        <view class="tit_seabox_bar">
+            <icon type='search' size="16"></icon>
+            <input type="text"  confirm-type='search' disabled='true' placeholder='请输入...' style="margin-left:10px;" />
+        </view>
+        </view>
+        <my-swiper imgUrls="{{bannerTop}}" class="head-swiper"/>
+    </view>
+ 
+    <service-module items="{{home.categories}}" class="home-module" />
+    <view class="seckill" wx:if="{{home.miaoCouponList.length}}">
+        <group-title class="time-get" title="{{'限时秒杀'}}" bind:moreFuc="moreSecondFuc" timeShow="{{timeShowSecond}}" timeDes="{{timeDesSecond}}"/>
+        <view class="seckill-container">
+            <view wx:for="{{home.miaoCouponList}}"  wx:key="{{index}}" class="seckill-item">
+                <group-item class="group-item" type="{{'default'}}" item="{{item}}" timeDes="{{timeDesSecond}}" data-bindex='{{index}}' bind:onJump="onJumpSecond"/>
+            </view>
+        </view>
+    </view>
+
+    <view class="home-group" wx:if="{{home.tuanCouponList.length}}" >
+        <group-title class="time-get" title="{{'今日必拼'}}" type="group" bind:moreFuc="moreGroupFuc" timeShow="{{timeShowTuan}}" timeDes="{{timeDesTuan}}"/>
+        <view class="seckill-container">
+            <view wx:for="{{home.tuanCouponList}}"  wx:key="{{index}}" class="seckill-item">
+                <group-item class="group-item" type="{{'default'}}" item="{{item}}" timeDes="{{timeDesTuan}}" data-bindex='{{index}}' bind:onJump="onJumpGroup"/>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{bannerMid.length}}">
+        <my-swiper imgUrls="{{bannerMid}}" class="shop-swiper" />
+    </block>
+
+    <view class="home-shop-group" style="width:{{screenWidth}}px">
+        <group-title class="time-get" type="{{'shop'}}" title="{{'热销商品'}}" bind:moreFuc="moreHotFuc"/>
+        <view class="goods-container">
+            <view class="goods-container-item">
+                <view wx:for="{{home.hotLeftGoods}}"  wx:key="{{index}}" class="goods-left-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpHotDetail" item="{{item}}"/>
+                </view>
+            </view>
+            <view class="goods-container-item">
+                <view wx:for="{{home.hotRightGoods}}"  wx:key="{{index}}" class="goods-right-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpHotDetail" item="{{item}}"/>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{bannerBottom.length}}">
+        <my-swiper imgUrls="{{bannerBottom}}" class="shop-swiper"/>
+    </block>
+
+    <view class="home-shop-group">
+        <group-title class="time-get" type="{{'shop'}}" title="{{'为您推荐'}}" bind:moreFuc="moreLoveFuc"/>
+        <view class="goods-container">
+            <view class="goods-container-item">
+                <view wx:for="{{home.loveLeftGoods}}"  wx:key="{{index}}" class="goods-left-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpLoveDetail" item="{{item}}"/>
+                </view>
+            </view>
+            <view class="goods-container-item">
+                <view wx:for="{{home.loveRightGoods}}"  wx:key="{{index}}" class="goods-right-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpLoveDetail" item="{{item}}"/>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,21 @@
+<view style="width:100%;height:100%;display:flex">
+    <wxs src="../../../service/num.wxs" module="tools" />
+    <view class="container" bindtap="onJump">
+        <view style="width:160rpx;">
+            <image src="{{goodDetaill.imgs[0]}}" class="image"/>
+        </view>
+        <view class="pro">
+            <view class="title">{{goodDetaill.name}}</view>
+            <view class="subtitle">{{goodDetaill.sku}}</view>
+            <view class="rate-container ">
+                <view class="rate" wx:if="{{false}}">2件7折</view>
+                <view class="rate" wx:if="{{false}}">2件7折</view>
+            </view>
+            <view class="price">
+                <text style="font-size:26rpx;">¥</text>{{tools.lessNum(goodDetaill.price/100)}}
+                <text class="price-dec">¥{{tools.lessNum(goodDetaill.market_price/100)}}</text>
+            </view>
+        </view>
+        <!-- <button class="buyBtn"/> -->
+    </view>
+</view>

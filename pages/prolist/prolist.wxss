@@ -1,0 +1,87 @@
+page {
+    background-color: #F4F4F4;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #F4F4F4;
+}
+.searchView {
+    display: flex;
+    align-items: center;
+}
+.searchContainer {
+    width: calc( 100% - 350rpx );
+    margin-left: 30rpx;
+    height: 70rpx;
+}
+.msgImg {
+    margin-left: 60rpx;
+    width: 46rpx;
+    height: 46rpx;
+    z-index: 10;
+}
+.list-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15rpx;
+    background-color: #F4F4F4;
+}
+.nav_left {
+    /*设置行内块级元素*/ 
+    position: absolute;
+    width: 24%;
+    background-color: #F4F4F4;
+}
+/*左侧栏list的item*/
+.nav_left .nav_left_items {
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+}
+.nav_left .nav_left_items.active {
+    color: #f0145a;
+    background-color: white;
+}
+.left_space {
+    width: calc( 100% - 20rpx );
+    padding: 10rpx;
+    display: flex;
+    align-items: center;
+}
+.indicate {
+    width: 10rpx;
+    height: 30rpx;
+}
+.indicate.active {
+    background-color: #f0145a;
+}
+.txt_left_container {
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+/*右侧栏主盒子*/
+.nav_right {
+    position: absolute;
+    flex: 1;
+    left: 24%;
+    width: 76%;
+    background: #fff;
+    white-space: nowrap
+}
+.item {
+    display: block;
+}
+.nodata_text {
+    color: black;
+    font-size: 14px;
+    text-align: center;
+}
+.separate {
+    background-color: #f0145a;
+    width: 10rpx;
+    z-index: 10;
+}

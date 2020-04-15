@@ -1,0 +1,155 @@
+<import src="../../wxParse/wxParse"/>
+<view class="container">
+    <wxs src="../../service/num.wxs" module="tools" />
+    <nav title="" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#fff" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+    <view class="headTop">
+        <image class="topImg" style='height:{{screenWidth}}px' src="{{group.detail.share_img}}"/>
+        <view class="lastTime">
+            <image class="secondImg" src="{{group.detail.thumb}}"/>
+            <view class="priceContainer">
+                <text class="price">¥{{tools.lessNum(group.detail.price/100)}}</text>
+                <text class="priceNormal" wx:if="{{group.detail.market_price}}">¥{{tools.lessNum(group.detail.market_price/100)}}</text>
+                <text class="priceDes"wx:if="{{group.detail.sales}}">销量{{group.detail.sales}}件</text>
+            </view>
+            <view class="secondContainer">
+                <view class="secondTitle">距离结束还剩:</view>
+                <view class="secondTimeContainer">
+                    <view class="secondPiece">
+                        <view class="piece">{{timeDesSecond[0]}}</view>
+                    </view>:
+                    <view class="secondPiece">
+                        <view class="piece">{{timeDesSecond[1]}}</view>
+                    </view>:
+                    <view class="secondPiece">
+                        <view class="piece">{{timeDesSecond[2]}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="headTitle">
+            <view class="title">{{group.detail.name}}</view>
+            <view class="coupon" wx:if="{{hasCoupon}}">
+                <view class="couponTitle">优惠</view>
+                <view class="couponDes">领券可减</view>
+                <view class="couponDesMoney">¥{{tools.lessNum(group.detail.couponinfo.money/100)}}</view>
+                <view class="couponDes couponDetail">满{{group.detail.couponinfo.min_order_amount/100}}减{{group.detail.couponinfo.money/100}}</view>
+                <view class="couponRight" bindtap="getCoupon" wx:if="{{false}}">
+                    <text >领券</text>
+                    <image src="/images/shopping/yousanjiao.png" class="rightImg"/>
+                </view>
+            </view>
+            <view class="coupon" wx:if="{{group.detail.freight.name}}">
+                <view class="couponTitle">包邮</view>
+                <view class="couponDes">{{group.detail.freight.name ? group.detail.freight.name : '不包邮'}}</view>
+                <view class="couponRight" bindtap="gotoMore" wx:if="{{false}}">
+                    <text >凑单</text>
+                    <image src="/images/shopping/yousanjiao.png" class="rightImg"/>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="groupItem">
+        <view class="groupTitle">TA们已经开团</view>
+        <view class="groupMemberContainer">
+            <view class="groupMember">
+                <image class="memberHead" src="{{userList[0].ruimg}}"/>
+                <view class="memberName">
+                    <text class="name">{{userList[0].rnickname}}</text>
+                    <text class="name namefew">还差<text class="namered">{{userList[0].neednum}}</text>人,剩余{{timeDesTA}}</text>
+                </view>
+            </view>
+            <view class="groupGo" bindtap="gotoBuy">去参团></view>
+        </view>
+        <view class="groupTitle">拼团玩法</view>
+        <view class="stepContainer">
+            <view class="step">
+                <view wx:for="{{groupImgs}}" wx:key="{{index}}" class="step-item">
+                    <view class="inline-item">
+                        <image  src="{{item.url}}" class="stepImg"/>
+                        <view >{{item.name}}</view>
+                    </view>
+                    <text class="inline-go" wx:if="{{index !== 3}}">></text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="goodsDetail" >
+        <view class="goodsHeaderContainer">
+            <view class="indicator"/>
+            <view class="goodsHeader">商品信息</view>
+        </view>
+        <view style="padding: 0px 5px">
+            <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+        </view>
+        <!-- <block wx:for="{{group.detail.content}}">
+            <image class="goodImg" src="{{item}}" mode="widthFix"/>
+        </block> -->
+    </view>
+    <view class="goodsAppraise" wx:if="{{group.evallist.list.length}}">
+        <view class="goodsHeaderContainer">
+            <view class="indicator"/>
+            <view class="goodsHeader">商品评价</view>
+            <view class="appraiseAll">
+                <view class="all">查看全部></view>
+            </view>
+        </view>
+        <view wx:for="{{group.evallist.list}}" style="margin-bottom: 20rpx;">
+            <appraise-item item="{{item}}"/>
+        </view>
+    </view>
+    <view class="group-detail-more" wx:if="{{productsLeft.length}}">
+        <group-title class="time-get" type="{{'detail'}}" title="{{'为您推荐'}}" />
+        <view class="shop-container-detail">
+            <view class="shop-container-item">
+                <view wx:for="{{productsLeft}}"  wx:key="{{index}}" class="shop-left-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                </view>
+            </view>
+            <view class="shop-container-item">
+                <view wx:for="{{productsRight}}"  wx:key="{{index}}" class="shop-right-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                </view>
+            </view>
+        </view>
+    </view>
+    <buy-item bind:shopStore="shopStoreFuc" bind:keFuStore="keFuStoreFuc" bind:gotoCar="gotoCarFuc" bind:singleBuy="singleBuy" bind:buyNow="buyNowFuc" cprice="{{group.detail.cprice/100}}" price="{{group.detail.price/100}}"/>
+    <view class="maskContainer" style="margin-top:{{screenHeight - 450}}px;" hidden='{{maskFlag}}'>
+            <view class="whiteContainer">
+                <view class="maskHead">
+                    <view class="headImgContainer">
+                        <image class="headImg" src="{{group.detail.share_img}}"/>
+                    </view>
+                    <view class="priceHeadContainer">
+                        <view class="priceTop">
+                            <view class="price">
+                                <view class="current">¥ <text class="currentNumber">{{tools.lessNum(group.detail.price/100)}}</text></view>
+                                <view class="before" wx:if="{{group.detail.market_price}}">¥{{tools.lessNum(group.detail.market_price/100)}}</view>
+                            </view>
+                            <view class="close">
+                                <image src="/images/goods/close.png" class="closeImg" catchtap='confirm'/>
+                            </view>
+                        </view>
+                        <view class="select">
+                            <text class="selectText">已选: {{selectGuiItem.parameter.value}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="maskSize">
+                    <view class="maskTitle">规格</view>
+                    <view class="maskdes">
+                        <view wx:for="{{group.guige}}" wx:key="{{index}}" style="color:{{selectGui === index ? 'red' : 'gray'}}" class="desContainer" catchtap='getGuigehandle' data-bindex='{{index}}'>{{item.parameter.value}}</view>
+                    </view>
+                </view>
+                <view class="maskSize">
+                    <view class="maskTitle">数量</view>
+                    <view class="maskdes">
+                        <image class="less" src="/images/goods/decrease.png" catchtap='lesshandle'/>
+                        <view class="num">{{choiceNum}}</view>
+                        <image class="more" src="/images/goods/increase.png" catchtap='addhandle'/>
+                    </view>
+                </view>
+                <view class="sure" catchtap='goOrderhandle'>确定</view>
+            </view>
+    </view>
+    <view class='mask' hidden='{{maskFlag}}'  catchtap='confirm'></view>
+</view>

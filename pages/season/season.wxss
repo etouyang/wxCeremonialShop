@@ -1,0 +1,60 @@
+page {
+  background-color: #F4F4F4;
+  height: 100%;
+}
+.green_card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+}
+.head_title {
+  margin-left: 40rpx;
+  padding: 10rpx 10rpx;
+  color: #338951;
+  font-size: 15px;
+  border-top: 1px solid #338951;
+  border-bottom: 1px solid #338951;
+}
+
+.green_image {
+  width: calc( 100% - 30rpx * 2);
+  margin: 30rpx 30rpx 0 30rpx;
+  height: 400rpx;
+}
+
+.green_price {
+  position: absolute;
+  margin: 360rpx 0 0 100rpx;
+  color: #338951;
+  font-size: 20px;
+}
+
+.hot-green {
+  color: #555;
+  box-sizing: border-box;
+  border: 1rpx solid #eee;
+  display: inline-block;
+  margin: 25rpx 15rpx 0 15rpx;
+  padding: 10rpx 25rpx;
+  font-size: 25rpx;
+  background-color: #F5F5F5;
+}
+.open_card {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+.open_card .btn {
+  width: calc( 100% - 60rpx );
+  height: 76rpx;
+  font-size: 15px;
+  color: #fff;
+  margin-left: 30rpx;
+  margin-bottom: 15rpx;
+  border-radius: 38rpx;
+  background: linear-gradient(to right, #FC8259, #F24842);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

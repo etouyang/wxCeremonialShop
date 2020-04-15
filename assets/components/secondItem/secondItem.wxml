@@ -1,0 +1,23 @@
+<view class="goodsWrap">
+    <wxs src="../../../service/num.wxs" module="tools" />
+    <view class="container">
+        <view class="image-container">
+            <image src="{{item.imgs[0]}}" class="image" mode="scaleToFill"/>
+        </view>
+        <view class="pro">
+            <view class="title">{{item.brandname}}</view>
+            <view class="subtitle">{{item.name}}</view>
+            <view class="rate-container ">
+                <view class="time-show">已售</view>
+                <view class="time-last">{{item.sales/item.stock*100}}%</view>
+            </view>
+            <view class="priceContainer">
+                <view style="display:flex">
+                    <text class="price">¥{{tools.lessNum(item.market_price/100)}}</text>
+                    <text class="price-dec">¥{{tools.lessNum(item.price/100)}}</text>
+                </view>
+                <view class="buyBtn" bindtap="gotoSecond">{{'马上抢 >'}}</view>
+            </view>
+        </view>
+    </view>
+</view>

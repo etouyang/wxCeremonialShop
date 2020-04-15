@@ -1,0 +1,70 @@
+.goodsWrap{
+  width: 100%;
+  border-radius: 20rpx;
+  position: relative;
+  background-color: #fff;
+}
+
+.container {
+  padding: 10rpx;
+}
+
+.image {
+    width: calc( 100% - 20rpx * 2);
+    height: 235rpx;
+    margin: 20rpx;
+}
+
+.title {
+  width: 90%;
+  color: #111111;
+  font-size: 14px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  word-break:nowrap;
+  white-space:nowrap;
+}
+.subtitle {
+  width: 90%;
+  color: #666666;
+  font-size: 11px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  word-break:nowrap;
+  white-space:nowrap;
+}
+.subtitle-des {
+  margin-left: 20rpx;
+}
+.rate {
+  width: auto;
+  height: 24rpx;
+  padding: 0 10rpx;
+  border-radius: 8rpx;
+  background-color: #FFE500;
+  font-size: 9px;
+  text-align:center;
+  display: inline-block;
+}
+.price {
+  font-size: 18px;
+  color: #F63B29 !important;
+  width: auto;
+  font-weight: bold;
+  margin-top: -5rpx;
+}
+
+.price-dec {
+  font-size: 10px;
+  text-decoration:line-through;
+  margin-left: 20rpx;
+  color: #666666;
+}
+.buyBtn {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  bottom: 30rpx;
+  right: 15rpx;
+}

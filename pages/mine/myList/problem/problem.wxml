@@ -1,0 +1,39 @@
+<view class="problemBlock">
+  <nav title="意见反馈" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+  <view class="problem_content" style="margin-top:{{capsuleTop+capsuleHeight}}px" >
+    <form catchsubmit="formSubmit" catchreset="formReset" class="form-box">
+      <view class="item">
+        <radio-group name="radio" class="platform">
+          <label style="flex:1;">
+            <radio value="radio1" />
+            平台
+          </label>
+          <label style="flex:1;">
+            <radio value="radio2" />
+            商户
+          </label>
+        </radio-group>
+      </view>
+
+      <view class='item'>
+        <input class="input" name="order" placeholder="请输入订单号码" />
+      </view>
+
+      <view class='item'>
+        <input class="input" name="title" placeholder="请输入标题名称" />
+      </view>
+      
+      <view class='item'>
+        <input class="input" name="phone" placeholder="请输入手机号码" />
+      </view>
+
+      <view class="textarea-wrp">
+        <textarea name="textarea" maxlength="200" auto-focus="true" placeholder="请留下你的宝贵意见或建议，我们将努力改进" bindinput="bindDetailInput"/>
+      </view>
+      <view class="wordNum"> <text style="color:#F63A29;">{{wordNum}}</text>/200 </view>
+      <view class="submit_box">
+        <button type="primary" formType="submit" class="btn">提交</button>
+      </view>
+    </form>
+  </view>
+</view>

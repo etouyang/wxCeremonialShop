@@ -1,0 +1,11 @@
+<view class="container" style="height:{{capsuleTop+capsuleHeight}}px;position:fixed;top:0;width:750rpx;z-index:100; background-color:{{headStyle}}">
+    <view class="nav" style="margin-top:{{capsuleTop}}px;height:{{capsuleHeight}}px">
+        <view class="leftContainer" bindtap='leftFuc'>
+            <image  wx:if="{{leftImg}}" class="leftImg" src="{{leftImg}}"/>
+        </view>
+        <view class="titleContainer" style="color:{{titleStyle}}">{{title}}</view>
+        <view class="rightContainer" bindtap="rightFuc">
+            <image  wx:if="{{rightImg}}" class="rightImg" src="{{rightImg}}"/>
+        </view>
+    </view>
+</view>

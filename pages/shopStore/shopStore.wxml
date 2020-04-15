@@ -1,0 +1,41 @@
+<view class="container" style="height:{{height}}px">
+    <wxs src="../../service/num.wxs" module="tools" />
+    <view class="headBg" style="height:{{capsuleTop + capsuleHeight + 90}}px">
+        <nav title="" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#fff" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+        <search class="searchContainer"  disabled="true" bind:addclick="onclick" style="margin-top:{{capsuleTop + capsuleHeight + 5}}px; width: {{width-30}}px" placeholder="输入查询的商品名"/>
+        <view class="shopScore">
+            <view style="margin-left:30rpx;">{{shopInfo.shopname}}</view>
+            <view style="margin-right:30rpx;" wx:if="{{shopInfo.score}}">{{shopInfo.score}}分</view>
+        </view>
+    </view>
+    <view class="shop-url-swiper" wx:if="{{banners.length}}" >
+      <my-swiper imgUrls="{{banners}}" class="swiper-url"/>
+    </view>
+    <view class='select_box'>
+        <ul>
+            <li wx:for="{{selectArray}}" wx:key="{{index}}" class="{{currentItem==item.producttype?'shop-active_tag':''}}" data-id="{{item.producttype}}" data-idx="{{index}}" bindtap="tagChoose">
+                {{item.text}}
+                <span class="line"></span>
+            </li>
+        </ul>
+    </view>
+    <view class="result_box">
+        <view class="shop-head-color">
+            <view class="left" />
+            {{currentTitle}}
+        </view>
+        <view class="item" wx:for="{{goodItems}}" wx:key="{{index}}" bindtap="onJumpDetail" data-bindex="{{index}}">
+            <view class="goods">
+                <view class="imgContainer">
+                    <image src="{{item.imgurl[0]}}" class="img"/>
+                </view>
+                <view class="goods-title">
+                    <view >{{item.name}}</view>
+                    <view style="margin-top: -50rpx;font-size: 12px;color: #999;">{{item.subtitle}}</view>
+                    <view class="price">¥{{tools.lessNum(item.dprice/100)}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

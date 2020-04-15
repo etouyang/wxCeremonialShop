@@ -1,0 +1,5 @@
+<view class="couponBlock">
+  <nav title="账户明细" bind:leftFuc="goBack" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+  <view class='container' style="margin-top:{{capsuleTop+capsuleHeight+15}}px">
+  </view>
+</view>

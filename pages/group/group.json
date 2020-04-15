@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "nav": "/assets/components/normalNav/normalNav",
+        "times-item": "/assets/components/timesItem/timesItem",
+        "groups-item": "/assets/components/groupsItem/groupsItem"
+    }
+}

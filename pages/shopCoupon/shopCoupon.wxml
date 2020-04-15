@@ -1,0 +1,8 @@
+<view class="container">
+    <nav title="领券" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+    <view style="margin-top:{{normalNav}}px" >
+        <block wx:for="{{couponList}}">
+            <coupon item="{{item}}" type="default" bind:getCoupon="getCoupon"/>
+        </block>
+    </view>
+</view>

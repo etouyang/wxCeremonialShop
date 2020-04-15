@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "nav": "/assets/components/normalNav/normalNav",
+        "pro-item": "/assets/components/proItem/proItem",
+        "search": "/assets/components/searchBox/index",
+        "appraise-item": "/assets/components/appraiseItem/appraiseItem",
+        "goods-item": "/assets/components/goodsItem/goodsItem",
+        "buy-item": "/assets/components/buyItem/buyItem",
+        "group-title": "/assets/components/groupTitle/groupTitle"
+    }
+}

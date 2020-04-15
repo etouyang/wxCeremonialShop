@@ -1,0 +1,15 @@
+@import '../../../assets/style/title/title.wxss';
+page {
+    background-color: #F4F4F4;
+    font-size: 14px;
+    color: #666666;
+}
+.back_box {
+    /* margin-top: 80rpx; */
+}
+.box {
+    margin-bottom: 10rpx;
+    background-color: #FFFFFF;
+    border-radius: 5rpx;
+    padding: 20rpx;
+}

@@ -1,0 +1,19 @@
+<view class="container">
+    <nav title="热销商品" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+    <view style="margin-top:{{capsuleTop + capsuleHeight + 10}}px"/>
+    <my-swiper imgUrls="{{bannerMid}}" class="head-swiper"  wx:if="{{bannerMid.length}}"/>
+    <view class="home-shop-group">
+        <view class="shop-container-detail">
+            <view class="shop-container-item">
+                <view wx:for="{{hotLeft}}"  wx:key="{{index}}" class="shop-left-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                </view>
+            </view>
+            <view class="shop-container-item">
+                <view wx:for="{{hotRight}}"  wx:key="{{index}}" class="shop-right-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

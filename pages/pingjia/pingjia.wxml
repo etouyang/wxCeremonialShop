@@ -1,0 +1,65 @@
+<view class="container">
+    <nav title="评价晒单" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+    <view class="view-container" style="margin-top:{{capsuleTop+capsuleHeight}}px">
+        <view wx:for="{{shares}}" class="share">
+            <block>
+                <view class="star-container">
+                    <image src="{{item.imgs[0]}}" class="good-img"/>
+                    <view class="stars-img">
+                        <block wx:for="{{item.star}}" wx:for-item="star" wx:for-index="idx">
+                            <image src="/images/goods/star.png" class="star-img" style="opacity:{{star ? 1 : 0.5}}" bindtap="score" data-item="{{item}}" data-index="{{idx}}"/>
+                        </block>
+                    </view>
+                    <view class="star-des">{{item.love}}</view>
+                </view>
+                <view >
+                    <textarea class="share-des" placeholder="分享你的使用体验吧" bindinput="bindDetailInput" value="{{detail}}" maxlength="100"/>
+                </view>
+                <view class="photo-imgs">
+                    <view class="ui_uploader_cell">
+                    <view class='ui_uploader_item' wx:for="{{item.local}}" wx:key="*this" wx:for-item="img" wx:for-index="idx">
+                        <icon class='ui_uploader_item_icon' bindtap='clearImg' data-item="{{index}}" data-index="{{idx}}" type="clear" size="15" color="red"/>
+                        <image bindtap='previewImage' id="{{img}}" data-index="{{index}}" src='{{img}}'></image>
+                    </view>
+                    <view class='ui_uploader local-photo' bindtap='chooseImage' data-index="{{index}}"></view>
+                    </view>
+                </view>
+                
+                <view class="noname">
+                    <checkbox-group bindchange="radioChange" data-index="{{index}}">
+                        <checkbox  checked="{{item.noname}}"/>
+                    </checkbox-group>
+                    <text style="margin-top:5rpx; margin-left:10rpx;font-size:10px;color:#999999;">匿名评价</text>
+                </view>
+            </block>
+        </view>
+        <view style="margin-left:30rpx;font-size:14px;font-weight:700;color:#999;">店铺评分</view>
+        <view class="share" style="height:260rpx; font-size:15px; color:#333; display:flex; justify-content: center; flex-direction: column;">
+            <view class="express-container">
+                <view style="margin-left:30rpx; width:160rpx;">快递包装</view>
+                <view class="stars-img">
+                    <block wx:for="{{express}}" >
+                        <image src="/images/goods/star.png" class="star-img" style="opacity:{{item ? 1 : 0.5}}" bindtap="score" data-index="{{index}}" data-item="express"/>
+                    </block>
+                </view>
+            </view>
+            <view class="express-container">
+                <view style="margin-left:30rpx; width:160rpx;">送货速度</view>
+                <view class="stars-img">
+                    <block wx:for="{{speed}}" >
+                        <image src="/images/goods/star.png" class="star-img" style="opacity:{{item ? 1 : 0.5}}" bindtap="score" data-index="{{index}}" data-item="speed"/>
+                    </block>
+                </view>
+            </view>
+            <view class="express-container">
+                <view style="margin-left:30rpx; width:160rpx;">配送员服务</view>
+                <view class="stars-img">
+                    <block wx:for="{{courier}}" >
+                        <image src="/images/goods/star.png" class="star-img" style="opacity:{{item ? 1 : 0.5}}" bindtap="score" data-index="{{index}}" data-item="courier"/>
+                    </block>
+                </view>
+            </view>
+        </view>
+        <view class="pingjia-btn" bindtap="pinjiaFuc">立即评价</view>
+    </view>
+</view>

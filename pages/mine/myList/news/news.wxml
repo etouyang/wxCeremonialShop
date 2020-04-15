@@ -1,0 +1,14 @@
+<view class="newsBlock">
+  <view class='back_box'>
+    <image bindtap='goBack' class="icon" src='../../../../images/nav/back.png' alt=""></image>
+    <span>消息列表</span>
+  </view>
+  
+  <view class='list_box'>
+   <view wx:for="{{listArray}}" class="list_item {{currentItem==index?'active_tag':''}}" data-id="{{index}}" bindtap="tagChoose">
+        {{item.text}}
+    </view>
+  </view>
+  
+
+</view>

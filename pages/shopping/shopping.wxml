@@ -1,0 +1,93 @@
+<view >
+    <view class="header" style="margin-top:{{capsuleTop}}px; height:{{capsuleHeight}}px">
+        <text>购物车</text>
+        <image src="/images/shopping/ico-ting-d.png" class="msgImg" bindtap="rightFuc" />
+    </view>
+    <!-- 列表 -->
+    <view class="table-view" style="padding-bottom: 150rpx;">
+        <view class="teacher-kes" wx:for="{{ data.products }}" wx:key="{{ groupIndex }}" wx:for-index="groupIndex">
+            <!-- 全选 -->
+            <view class="teacher-ke" wx:if="{{item.goods.length}}">
+                <checkbox-group bindchange="checkall" data-index="{{ groupIndex }}" >
+                    <checkbox checked='{{ item.checkeedAll }}'></checkbox>
+                </checkbox-group>
+                <image class="logo" src="../../images/shopping/jingdong.png"></image>
+                <text class="teacher-ke-name">{{ item.shopname }}</text>
+            </view>
+            <view  style="margin-top: 30rpx">
+
+                <view wx:for="{{item.goods}}" wx:key="{{ index }}" wx:for-item="itemCoupon" wx:for-index="indexCoupon">
+                    <view class="message-list {{status ? '' :'active'}}">
+                        <checkbox-group class="hot-div hot-checked" data-groupIndex="{{ groupIndex }}" wx:for="{{ itemCoupon }}" wx:for-item="itemPiece" wx:for-index="index"
+                            data-kc="{{ item }}" wx:key="{{ indexPiece }}" data-index="{{ index }}" data-indexCoupon="{{ indexCoupon }}" bindchange="ChecksOne">
+                            <view class="gouwu-list" data-groupIndex="{{ groupIndex }}" data-indexCoupon="{{ indexCoupon }}" data-index='{{ index }}' bindtouchstart="touchS1" bindtouchmove="touchM1" style="{{itemPiece.txtStyle}}">
+                                <checkbox wx:if="{{ itemPiece.stock == 1 }}" disabled="true"></checkbox>
+                                <checkbox wx:else checked="{{ itemPiece.checked }}"></checkbox>
+                                <image src="{{ imgurl+itemPiece.imgs[0] }}" class="Hot-div-img"></image>
+                                <view class="Hot-div-shop">
+                                    <view class="hot-price-title" bindtap="product_details" data-item='{{itemPiece}}'>{{ itemPiece.name }}</view>
+                                    <view class="message-center">
+                                        <view class="shou-word">{{ itemPiece.sku }}</view>
+                                        <view class="zero-inventory" wx:if="{{ itemPiece.stock == 1 }}">库存不足</view>
+                                        <!-- <view class="zero-range" wx:if="{{ itemPiece.range == 1 }}">超出配送范围</view> -->
+                                    </view>
+                                    <view class="order-red">
+                                        <view>
+                                            ¥
+                                            <text>{{ itemPiece.price }}</text>
+                                        </view> 
+                                        <view class='num_change'>
+                                            <!-- 后端有个bug,可以减到负数,前端还是可以持续减少 -->
+                                            <image wx:if="{{itemPiece.num >= 1}}" class="minus_icon" src="/images/goods/decrease.png" data-groupIndex="{{ groupIndex }}" data-index='{{ index }}' data-indexCoupon="{{ indexCoupon }}"
+                                            data-types='minus' catchtap='numchangeTap1'/>
+                                            <view wx:else class="minus_icon"></view>
+                                            <input class="shop_num" type="number" data-groupIndex="{{ groupIndex }}" data-indexCoupon="{{ indexCoupon }}" data-index='{{ index }}' value="{{ itemPiece.num }}" placeholder='1' bindinput="watchInput" bindblur="minInput" />
+                                            <image class="add_icon" src="/images/goods/increase.png" data-groupIndex="{{ groupIndex }}" data-index='{{ index }}' data-indexCoupon="{{ indexCoupon }}" data-types='add' catchtap='numchangeTap1'/>
+                                            <!-- <view class='minus_icon' data-groupIndex="{{ groupIndex }}" data-index='{{ index }}' data-indexCoupon="{{ indexCoupon }}"
+                                            data-types='minus' catchtap='numchangeTap1'>-</view>
+                                            <input class="shop_num" type="number" data-groupIndex="{{ groupIndex }}" data-indexCoupon="{{ indexCoupon }}" data-index='{{ index }}' value="{{ itemPiece.num }}" placeholder='1' bindinput="watchInput" bindblur="minInput" />
+                                            <view class='add_icon' data-groupIndex="{{ groupIndex }}" data-index='{{ index }}' data-indexCoupon="{{ indexCoupon }}" data-types='add' catchtap='numchangeTap1'>+</view>  -->
+                                        </view>
+                                    </view>
+                                    <view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view data-index="{{ item.index }}" data-groupIndex="{{ groupIndex }}" data-index='{{ index }}' data-indexCoupon="{{ indexCoupon }}" style="{{itemPiece.delStyle}}" bindtap = "delItem" class="inner" catchtap="shanchuTap1">
+                                <text>删除</text>
+                            </view>
+                        </checkbox-group>
+                    </view>
+                </view>
+
+            </view>
+
+        </view>
+    </view>
+    
+    <view wx:if="{{data.products.length == 0}}" class="no-data-div">
+        <image src="/images/common/no-data.png" mode="aspectFit" class="no-data"/>
+        <view class="no-data-tips">购物车空空如也</view>
+    </view>
+    <!-- 结算 -->
+    <view class="shop-check">
+        <view class="quanxuan">
+            <checkbox-group bindchange="AllTap" data-index="{{ index }}">
+                <checkbox checked='{{ checkedAll }}'></checkbox>
+            </checkbox-group>
+            <text class="shop-check-text">全选</text>
+        </view>
+        <view class="shop-check-right">
+            <view class="shop-check-he">
+                <view>
+                    合计：
+                    <text>¥ </text>
+                    <span>{{ priceAll || "0.00" }}</span>
+                </view> 
+                <p>优惠金额见结算页面</p>  
+            </view>
+            <view class="shop-check-jie" wx:if="{{ count <= 0 }}">结算</view>
+            <view class="shop-check-jie" wx:else bindtap="Settlement">结算({{ count }})</view>
+        </view>
+    </view>
+</view>

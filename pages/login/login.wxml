@@ -1,0 +1,29 @@
+<view class='container'>
+<nav title="" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#fff" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+  <view class='header' style="margin-top:{{normalNav}}px">
+    <text></text>
+  </view>
+  <view class='imgContainer logo-div'>
+    <image class="img logo" src="{{logo}}" mode="aspectFit"/>
+  </view>
+  <button class='btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+    <image class='btnImg' src='/images/common/wechat.png'></image>
+    <view style="font-size: 14px; line-height: 40px">微信快速登录</view>
+  </button>
+  <view class="phoneContainer" bindtap='phoneFuc'>
+    <view class="phone">输入手机号登录</view>
+  </view>
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+    <view class="zan-dialog__container">
+      <view>
+        <view class="toast-title">手机号码授权</view>
+        <view class="toast-des">蚁步将获取您的手机号码进行登录操作</view>
+        <view class="toast-btn-container">
+          <button class="toast-btn-left" bindtap="cancle">取消</button>
+          <button class="toast-btn-right" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">确定</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

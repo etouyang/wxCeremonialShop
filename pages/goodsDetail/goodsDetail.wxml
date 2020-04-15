@@ -1,0 +1,126 @@
+<import src="../../wxParse/wxParse"/>
+<view class="container">
+    <wxs src="../../service/num.wxs" module="tools" />
+    <nav title="" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#fff" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+    <image class="topImg" src="{{goods.detail.share_img}}" mode="widthFix"/>
+    <view class="headTop">
+        <view class="lastTime">
+        </view>
+        <view class="headTitle">
+            <view class="priceContainer">
+                <view >
+                    <text class="price">¥{{tools.lessNum(goods.detail.price/100)}}</text>
+                    <text class="priceNormal" wx:if="{{goods.detail.market_price}}">¥{{tools.lessNum(goods.detail.market_price/100)}}</text>
+                </view>
+                <view >
+                    <text class="priceDes"wx:if="{{goods.detail.sales}}">销量{{goods.detail.sales}}件</text>
+                </view>
+            </view>
+            <view class="title">{{goods.detail.name}}</view>
+            <view class="coupon" wx:if="{{hasCoupon}}">
+                <view class="couponTitle">优惠</view>
+                <view class="couponDes">领券可减</view>
+                <view class="couponDesMoney">¥{{tools.lessNum(goods.detail.couponinfo.money/100)}}</view>
+                <view class="couponDes couponDetail">满{{goods.detail.couponinfo.min_order_amount/100}}减{{goods.detail.couponinfo.money/100}}</view>
+                <!-- <view class="couponDes couponDetail">满199减10</view> -->
+                <view class="couponRight" bindtap="getCoupon" wx:if="{{false}}">
+                    <text >领券</text>
+                    <image src="/images/shopping/yousanjiao.png" class="rightImg"/>
+                </view>
+            </view>
+            <view class="coupon" wx:if="{{goods.detail.freight.name}}">
+                <view class="couponTitle">包邮</view>
+                <view class="couponDes">{{goods.detail.freight.name ? goods.detail.freight.name : '不包邮'}}</view>
+                <view class="couponRight" bindtap="gotoMore" wx:if="{{false}}">
+                    <text >凑单</text>
+                    <image src="/images/shopping/yousanjiao.png" class="rightImg"/>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{greenPrice}}" class="green-card-view">
+        <view class="flex1 card-info">
+            <image src="/images/goods/icon_green_card.png" mode="widthFix" class="green-card" />
+            <view style="color: #333;font-size: 13px;margin-left:10rpx;">会员下单预计再减{{tools.lessNum(greenPrice/100/100)}}元, 含卡{{green.discount || 0}}折</view>
+        </view>
+        <view class="go-to-buy" bindtap="gotoSession">
+        <text>购买四季卡</text>>
+        </view>
+    </view>
+    <view class="goodsDetail" >
+        <view class="goodsHeaderContainer">
+            <view class="indicator"/>
+            <view class="goodsHeader">商品信息</view>
+        </view>
+        <view style="padding: 0px 5px">
+            <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+        </view>
+    </view>
+    <view class="goodsAppraise" wx:if="{{goods.evallist.list.length}}">
+        <view class="goodsHeaderContainer">
+            <view class="indicator"/>
+            <view class="goodsHeader">商品评价</view>
+            <view class="appraiseAll">
+                <view class="all">查看全部></view>
+            </view>
+        </view>
+        <view wx:for="{{goods.evallist.list}}" style="margin-bottom: 20rpx;">
+            <appraise-item item="{{item}}"/>
+        </view>
+    </view>
+    <view class="home-shop-group-detail" wx:if="{{productsLeft.length}}">
+        <group-title class="time-get" type="{{'detail'}}" title="{{'为您推荐'}}" />
+        <view class="shop-container-detail">
+            <view class="shop-container-item">
+                <view wx:for="{{productsLeft}}"  wx:key="{{index}}" class="shop-left-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                </view>
+            </view>
+            <view class="shop-container-item">
+                <view wx:for="{{productsRight}}"  wx:key="{{index}}" class="shop-right-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                </view>
+            </view>
+        </view>
+    </view>
+    <buy-item bind:shopStore="shopStoreFuc" bind:keFuStore="keFuStoreFuc" bind:gotoCar="gotoCarFuc" bind:addCar="addCarFuc" bind:buyNow="buyNowFuc"/>
+    <view class="maskContainer" hidden='{{maskFlag}}' catchtap='confirm'>
+            <view class="whiteContainer" catchtap='confirmNo'>
+                <view class="maskHead">
+                    <view class="headImgContainer">
+                        <image class="headImg" src="{{goods.detail.share_img}}"/>
+                    </view>
+                    <view class="priceHeadContainer">
+                        <view class="priceTop">
+                            <view class="price">
+                                <view class="current">¥ <text class="currentNumber">{{selectGuiItem ? tools.lessNum(selectGuiItem.price/100) : tools.lessNum(goods.detail.price/100)}}</text></view>
+                                <view class="before" wx:if="{{goods.detail.market_price}}">¥{{tools.lessNum(goods.detail.market_price/100)}}</view>
+                            </view>
+                            <view class="close" catchtap='confirm'>
+                                <image src="/images/goods/close.png" class="closeImg"/>
+                            </view>
+                        </view>
+                        <view class="select">
+                            <text class="selectText">已选: {{selectGuiItem.parameter.value}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="maskSize">
+                    <view class="maskTitle">规格</view>
+                    <view class="maskdes">
+                        <view wx:for="{{goods.guige}}" wx:key="{{index}}" style="color:{{selectGui === index ? 'red' : 'gray'}}" class="desContainer" catchtap='getGuigehandle' data-bindex='{{index}}'>{{item.parameter.value}}</view>
+                    </view>
+                </view>
+                <view class="maskSize">
+                    <view class="maskTitle">数量</view>
+                    <view class="maskdes">
+                        <image class="less" src="/images/goods/decrease.png" catchtap='lesshandle'/>
+                        <view class="num">{{choiceNum}}</view>
+                        <image class="more" src="/images/goods/increase.png" catchtap='addhandle'/>
+                    </view>
+                </view>
+                <view class="sure" catchtap='goOrderhandle'>确定</view>
+            </view>
+    </view>
+    <view class='mask' hidden='{{maskFlag}}'  catchtap='confirm'></view>
+</view>

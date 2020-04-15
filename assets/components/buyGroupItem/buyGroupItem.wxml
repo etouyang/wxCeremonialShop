@@ -1,0 +1,28 @@
+<view class="buyWrap" style="position:fixed; bottom:0;width: 750rpx;">
+    <view class="container">
+        <view class="leftContainer">
+            <view class="kefuContainer" bindtap="shopStore">
+                <image src="/images/goods/shopping-store.png" class="img" />
+                <text style="color: #FF6C5E;">店铺</text>
+            </view>
+            <button class="fast-button kefuContainer" open-type="contact">
+                <image src="/images/goods/kefu.png" class="img" />
+                <view>客服</view>
+            </button>
+            <view class="kefuContainer" bindtap="gotoCar">
+                <image src="/images/goods/shoppingcar.png" class="img"  />
+                <text >购物车</text>
+            </view>
+        </view>
+        <view class="txtContainer">
+            <view class="addCar" bindtap="singleBuy">
+                <text >¥{{price}}</text>
+                <text >单独购买</text>
+            </view>
+            <view class="buy" bindtap="buyNow">
+                <text >¥{{cprice}}</text>
+                <text >我要开团</text>
+            </view>
+        </view>
+    </view>
+</view>

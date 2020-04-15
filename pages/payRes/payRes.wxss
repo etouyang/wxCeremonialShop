@@ -1,0 +1,141 @@
+page {
+  padding: 0;
+  background-color: #f4f4f4;
+  height: 100%;
+}
+.payContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headImg {
+  margin-top: 120rpx;
+  width: 160rpx;
+  height: 160rpx;
+}
+.payTitle {
+  margin-top: 50rpx;
+  color: #333333;
+  font-size: 18px;
+  font-weight: bold;
+}
+.payDes {
+  margin-top: 30rpx;
+  color: #333333;
+  font-size: 14px;
+}
+.submit_box{
+  margin-top: 60rpx;
+  width: calc( 100% - 150rpx );
+  left: 75rpx;
+}
+.btn {
+  height: 90rpx;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 10rpx;
+  background: linear-gradient(to right, #F24842, #FC8259);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn::after {
+  border-radius: 38rpx;
+  border: 0; 
+}
+.show-order {
+  width: 100%;
+  height: 90rpx;
+  font-size: 18px;
+  color: #F24842;
+  border-radius: 10rpx;
+  border: 1px solid #FC8259;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-container {
+    width: calc( 100% - 20rpx );
+    margin-left: 10rpx;
+}
+.lineImg {
+    width: 100%;
+    height: 28rpx;
+    margin-bottom: -10rpx;
+}
+.order {
+    position: relative;
+    width: calc( 100% - 40rpx );
+    margin-top: -15rpx;
+    margin-left: 20rpx;
+    background-color: #fff;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+}
+.opacity {
+    width: 100%;
+    height: 24rpx;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0));
+}
+.title {
+    font-size: 14px;
+    color: #111111;
+    font-weight: 500;
+    margin-left: 30rpx;
+}
+.piece {
+    width: calc( 100% - 60rpx );
+    margin-left: 30rpx;
+    margin-bottom: 30rpx;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.leftTitle {
+  color: #111111;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.rightTitle {
+  color: #333333;
+  font-weight: 400;
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+.bottomTitle {
+  color: #F63A29;
+  font-size: 13px;
+  margin-left: 30rpx;
+}
+.bottom-white {
+  width: 100%;
+  height: 50rpx;
+}
+.bottom-btn-container {
+  width: 100%;
+  height: 250rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.share-order {
+  width: 330rpx;
+  height: 76rpx;
+  margin-left: 32rpx;
+  border-radius: 38rpx;
+  color: #fff;
+  font-size: 15px;
+  background: linear-gradient(to right, #597DFC, #D6038D);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

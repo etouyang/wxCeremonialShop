@@ -1,0 +1,25 @@
+page {
+  background-color: #F4F4F4;
+}
+.greenlist {
+  height: 100%;
+}
+.list_img {
+  width: 160rpx;
+  height: 160rpx;
+}
+.list_item {
+  width: 30%;
+  height: 300rpx;
+  margin-left: 30rpx;
+}
+.list_item_title {
+  width: 90%;
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  word-break: nowrap;
+  white-space: nowrap;
+}

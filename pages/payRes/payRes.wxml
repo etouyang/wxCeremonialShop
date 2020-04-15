@@ -1,0 +1,15 @@
+<view class="payContainer">
+    <wxs src="../../service/num.wxs" module="tools" />
+    <nav title="订单支付结果" bind:leftFuc="leftFuc" titleStyle="#333" leftImg="/images/nav/back.png" />
+    <view class="view-container" style="margin-top:{{capsuleTop+capsuleHeight}}px">
+        <image src="{{result ? '/images/shopping/paySucc.png' : '/images/shopping/payFail.png'}}" class="headImg" mode="scaleToFill"/>
+        <view class="payTitle">{{result ? "支付成功" : "支付失败"}}</view>
+        <view class="payDes">{{result ? "您已完成支付，感谢您的选择" : "支付遇到问题啦？点击【继续支付】或联系商家"}}</view>
+        <view class="submit_box">
+            <button type="primary" formType="submit" class="btn">{{result ? "返回首页" : "继续支付"}}</button>
+        </view>
+        <view class="submit_box" style="margin-top: 45rpx">
+          <view class="show-order" bindtap="orderDetail">查看订单</view>
+        </view>
+    </view>
+</view>

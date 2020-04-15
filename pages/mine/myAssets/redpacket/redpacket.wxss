@@ -1,0 +1,48 @@
+@import '../../../../assets/style/title/title.wxss';
+
+.couponBlock .select_box {
+  display: flex;
+  height: 88rpx;
+}
+
+.couponBlock .select_box .item {
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.couponBlock .select_box .active_tag {
+  position: relative;
+}
+
+.couponBlock .select_box .active_tag .line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4rpx;
+  background: red;
+}
+
+.couponBlock .result_box {
+}
+
+.couponBlock .result_box .noneBox {
+  margin-top: 300rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.couponBlock .result_box .noneBox image {
+  width: 248rpx;
+  height: 248rpx;
+}
+
+.couponBlock .result_box .noneBox .text {
+  font-size: 28rpx;
+  color: #999;
+}

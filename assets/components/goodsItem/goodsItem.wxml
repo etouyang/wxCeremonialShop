@@ -1,0 +1,12 @@
+<view class="goodsWrap">
+    <wxs src="../../../service/num.wxs" module="tools" />
+    <view class="container" bindtap="onJumpDetail">
+        <image src="{{item.image[0]}}" class="image"/>
+        <view class="title">{{item.name }}</view>
+        <view style="display:flex">
+            <text class="subtitle" decode="{{true}}">{{item.subtitle}}&ensp;</text>
+        </view>
+        <view class="rate" wx:if="{{item.freight}}">{{item.freight.name}}</view>
+        <view class="price">¥{{tools.lessNum(item.price/100)}}<text class="price-dec" wx:if="{{item.market_price}}">¥{{tools.lessNum(item.market_price/100)}}</text></view>
+    </view>
+</view>

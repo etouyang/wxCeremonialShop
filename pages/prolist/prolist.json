@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "pro-item": "/assets/components/proItem/proItem",
+        "search": "/assets/components/searchBox/index"
+    },
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+}

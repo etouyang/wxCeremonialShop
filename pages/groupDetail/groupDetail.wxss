@@ -1,0 +1,465 @@
+page {
+    background-color: #F4F4F4;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #F4F4F4;
+}
+.headTop {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.topImg {
+    width: 100%;
+}
+.lastTime {
+    display: flex;
+    width: calc( 100% - 32rpx *2 );
+    height: 120rpx;
+    margin: -30rpx 32rpx 0;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    background: linear-gradient(to right, #597DFC, #F242B5);
+}
+.secondImg {
+    width: 60rpx;
+    height: 60rpx;
+    margin-top: 15rpx;
+    margin-left: 25rpx;
+}
+.priceContainer {
+    width: 55%;
+    height: 60rpx;
+    margin-top: 15rpx;
+    margin-left: 10rpx;
+}
+.price {
+    font-size: 20px;
+    color: #FFF198;
+}
+.priceNormal {
+    font-size: 10px;
+    margin-left: 20rpx;
+    text-decoration:line-through;
+}
+.priceDes {
+    font-size: 10px;
+    margin-left: 20rpx;
+}
+.secondContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+.secondTitle {
+    font-size: 9px;
+    margin-top: 12rpx;
+}
+.secondTimeContainer {
+    margin-top: 5rpx;
+    width: 162rpx;
+    height: 36rpx;
+    color: #fff;
+    display: flex;
+    font-size: 9px;
+    font-weight: bold;
+    align-items: center;
+}
+.secondPiece {
+    width: 54rpx;
+    height: 36rpx;
+}
+.piece {
+    width: 36rpx;
+    height: 100%;
+    margin-left: 9rpx;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6rpx;
+}
+.headTitle {
+    width: calc( 100% - 30rpx *2 );
+    height: auto;
+    margin: -30rpx 30rpx 0;
+    border-radius: 20rpx;
+    background-color: #fff;
+}
+.title {
+    margin: 30rpx 45rpx 30rpx 30rpx;
+    font-size: 15px;
+    color: #000;
+}
+.coupon {
+    height: 35rpx;
+    margin: 0 30rpx 30rpx;
+    display: flex;
+    font-size: 12px;
+}
+.couponTitle {
+    height: 100%;
+    margin-right: 30rpx;
+    color: #666666;
+}
+.couponDes {
+    color: #000;
+}
+.couponDesMoney {
+    color: red;
+    margin: 0 15rpx 0 10rpx;
+}
+.couponDetail {
+    margin-right: 10rpx;
+    width: auto;
+    padding: 0 10rpx;
+    background-color: #FDE234;
+    border-radius: 5rpx;
+}
+.couponRight {
+    flex: 1;
+    color: red;
+    display: flex;
+    justify-content: flex-end;
+}
+.rightImg {
+    margin-left: 10rpx;
+    margin-top: 10rpx;
+    width: 14rpx;
+    height: 16rpx;
+}
+
+.goodsDetail {
+    margin-top: 30rpx;
+    margin-bottom: 100rpx;
+}
+.goodsHeaderContainer {
+    width: 100%;
+    height: 85rpx;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30rpx;
+}
+.indicator {
+    width: 8rpx;
+    height: 25rpx;
+    background-color: red;
+}
+.goodsHeader {
+    font-size: 14px;
+    color: red;
+    margin-left: 20rpx;
+}
+.goodImg {
+    width: 100%;
+    height: 400rpx;
+    margin-bottom: 2rpx;
+    background-color: red;
+}
+.goodsAppraise {
+    margin-top: 60rpx;
+}
+.appraiseAll {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.all {
+    font-size: 12px;
+    color: red;
+    margin-right: 25rpx;
+}
+.group-detail-more {
+    margin-top: 30rpx;
+    margin-bottom: 100rpx;
+  }
+  .time-get {
+    width: 100%;
+    height: 50rpx;
+  }
+ .shop-container-detail {
+    display: flex;
+    margin: 30rpx 30rpx 0;
+    width: calc( 100% - 60rpx );
+  }
+  .shop-container-item {
+    flex: 1;
+    width: 50%;
+  }
+  .shop-left-item {
+    width: calc( 100% - 14rpx);
+    margin: 0 14rpx 30rpx 0;
+    height: auto;
+  }
+  .shop-right-item {
+    width: calc( 100% - 14rpx);
+    margin: 0 0 30rpx 14rpx;
+    height: auto;
+  }
+  .mask{
+    width:100%;
+    height:100%;
+    position:fixed;
+    background-color:#999;
+    z-index:9000;
+    top:0;
+    left:0;
+    opacity:0.5;
+    display: flex;
+  }
+  .maskContainer {
+      width: 100%;
+      height: 900rpx;
+      background-color: red;
+      position: fixed;
+      z-index: 9001;
+  }
+  .whiteContainer {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      border-top-left-radius: 20rpx;
+      border-top-right-radius: 20rpx;
+      display: flex;
+      flex-direction: column;
+  }
+  .maskHead {
+      width: 100%;
+      height: 190rpx;
+      margin-top: -30rpx;
+      display: flex;
+      flex-direction: row;
+  }
+  .headImgContainer {
+      width: 185rpx;
+      height: 185rpx;
+      margin-left: 30rpx;
+      box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(85, 85, 85, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10rpx;
+  }
+  .headImg {
+      width: 130rpx;
+      height: 130rpx;
+      background-color: gray;
+      border-radius: 65rpx;
+  }
+  .priceHeadContainer {
+    flex: 1;
+    margin-top: 30rpx;
+    height: calc( 100% - 30rpx );
+    display: flex;
+    flex-direction: column;
+    background-color: rebeccapurple;
+  }
+  .priceTop {
+    width: 100%;
+    height: 100rpx;
+    justify-content: space-between;
+    display: flex;
+  }
+  .price {
+    margin-left: 25rpx;
+    margin-top:25rpx;
+  }
+  .current {
+    display: block;
+    color: red;
+    font-size: 10px;
+  }
+  .currentNumber {
+    font-size: 16px;
+  }
+  .before {
+    display: block;
+    color: #666;
+    font-size: 10px;
+    margin-top: -10rpx;
+    text-decoration:line-through;
+  }
+  .close {
+    width: 60rpx;
+    height: 60rpx;
+  }
+  .closeImg {
+    margin-top: 20rpx;
+    width: 40rpx;
+    height: 40rpx;
+  }
+  .select {
+    width: calc( 100% - 50rpx );
+    height: 60rpx;
+    background-color: red;
+    margin: 0 25rpx;
+    display: flex; 
+    align-items: flex-end;
+}
+.selectText {
+    width: 500rpx;
+    height: 100%;
+    font-size: 13px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+.maskSize {
+    width: 100%;
+    margin-top: 30rpx;
+}
+.maskTitle {
+    color: #000;
+    font-size: 15px;
+    margin-left: 30rpx;
+    margin-bottom: -5rpx;
+}
+.maskdes {
+    display: flex;
+    margin: 0 100rpx 0 25rpx;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+.desContainer {
+    width: auto;
+    height: 50rpx;
+    border-radius: 25rpx;
+    padding: 0rpx 40rpx;
+    margin-right: 20rpx;
+    margin-top: 30rpx;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.less {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 25rpx;
+    margin-left: 25rpx;
+    margin-top: 25rpx;
+    background-color: red;
+}
+.num {
+    width: 105rpx;
+    height: 50rpx;
+    margin-top: 25rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.more {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 25rpx;
+    margin-top: 25rpx;
+    background-color: red;
+}
+.sure {
+    position: absolute;
+    bottom: 10rpx;
+    left: 30rpx;
+    right: 30rpx;
+    font-size: 15px;
+    width: calc( 100% - 60rpx );
+    height: 76rpx;
+    border-radius: 38rpx;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.groupItem {
+    display: flex;
+    width: calc( 100% - 32rpx *2 );
+    height: 410rpx;
+    margin: 25rpx 32rpx 0;
+    border-radius: 20rpx;
+    background-color: #fff;
+    flex-direction: column;
+}
+.groupTitle {
+    margin: 25rpx 0 0 25rpx;
+    font-size: 14px;
+    color: #000;
+}
+.groupMemberContainer {
+    width: calc( 100% - 50rpx );
+    height: 75rpx;
+    margin: 23rpx 25rpx 30rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.groupMember {
+    flex: 1;
+    height: 75rpx;
+    display: flex;
+}
+.memberHead {
+    width: 75rpx;
+    height: 75rpx;
+    border-radius: 37.5rpx;
+    background-color: #FDE234;
+}
+.memberName {
+    flex: 1;
+    margin-left: 15rpx;
+    font-size: 12px;
+}
+.name {
+    display: block;
+    color: #000;
+}
+.namefew {
+    color: #666;
+}
+.namered {
+    color: red;
+}
+.groupGo {
+    width: 135rpx;
+    height: 54rpx;
+    margin-right: 25rpx;
+    border-radius: 27rpx;
+    background: linear-gradient(to right, #597DFC, #F242B5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #fff;
+}
+.stepContainer {
+    margin: 0 25rpx;
+}
+.step {
+    display: flex;
+}
+.stepImg {
+    width: 80rpx;
+    height: 80rpx;
+}
+.step-item {
+    width: 25%;
+    font-size: 12px;
+    color: #666;
+    display: flex;
+}
+.inline-item {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.inline-go {
+    width: 10rpx;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

@@ -1,0 +1,21 @@
+<view class='container'>
+<nav title="" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#fff" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+  <view class='header' style="margin-top:{{normalNav}}px">
+    <text></text>
+  </view>
+  <view class='imgContainer'>
+    <image class="img logo" src="{{logo}}" mode="aspectFit"/>
+  </view>
+  <view class="phoneContainer">
+    <input placeholder='请输入手机号' maxlength="11" type='number' value="{{phone}}" bindinput="phoneInput" class="phoneInput"/>
+  </view>
+  <view class="codeContainer">
+     <input placeholder='短信验证码' maxlength="6" value="{{code}}" bindinput="codeInput" class="phoneInput"/>
+    <view bindtap="getCode" class="codeBtn">{{timeStr}}</view>
+  </view>
+  <button type='primary' bindtap="login" class='button'>登录</button>
+  <view class="clause">
+    我已阅读并同意<text >《个人协议》</text>
+  </view>
+
+</view>

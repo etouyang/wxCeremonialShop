@@ -1,0 +1,104 @@
+<view class="container">
+    <wxs src="../../service/num.wxs" module="tools" />
+    <nav title="填写订单" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+    <view style="margin-top:{{normalNav}}px" class="mymsg" wx:if="{{order.addrlist.length}}" bindtap="changeAddress">
+        <view class="getPeople">收货人</view>
+        <view class="getName">
+            <view >{{adress.uname}}</view>
+            <view >{{adress.phone}}</view>
+        </view>
+        <text class="getAddress">{{adress.detail}}</text>
+    </view>
+    <view style="margin-top:{{normalNav}}px" class="mymsg" wx:else bindtap="addAddress">
+        <view class="getPeople">收货人</view>
+        <view class="getPeople">请添加收款人</view>
+    </view>
+    <view class="payway">
+        <view >支付方式</view>
+        <view style="margin-right:30rpx">微信</view>
+    </view>
+    <view wx:for="{{order.products}}" wx:for-index="index" class="mymsg">
+        <block>
+            <view class="goods-box-head">
+                <image src="/images/shopping/ico-suning.png" class="goods-box-head-img"/>
+                <text >{{item.shopname}}</text>
+            </view>
+            <view class="goods-box-img">
+                <view class="goods-box-img-content">
+                    <view wx:for="{{item.goods}}" wx:for-item="good">
+                        <image src="{{good.imgs[0]}}" class="goods-box-img-piece"/>
+                    </view>
+                </view>
+                <view class="goods-num goods-num-title-content">共{{goodsNum[index]}}件</view>
+                <view class="goods-num goods-num-more">...</view>
+            </view>
+            <!-- <view class="send-address-provide">
+                <view class="address-box">
+                    <view class="address-title-head">
+                        <text class="address-title">配送</text>
+                        <text class="address-title-des">苏宁物流</text>
+                    </view>
+                    <view class="address-title-more">工作日、双休日与假日均可送货</view>
+                </view>
+                <view class="goods-num goods-num-more">...</view>
+            </view> -->
+            <view class="re-back">
+                <text style="font-weight: bold;">退换无忧</text>
+                <text style="margin-right: 50rpx;">{{item.shopremark}}</text>
+            </view>
+            <view class="leave-message">
+                <text style="margin-top:4rpx">留言</text>
+                <input class="leave-message-input" placeholder="100字以内" type="text" maxlength="100"/>
+            </view>
+        </block>
+    </view>
+    <view class="mymsg">
+        <view class="fapiao-box">
+            <text style="font-weight: bold;">发票</text>
+            <view class="right-more-container">
+                <text style="margin-right: 10rpx;">如需发票, 请到个人中心集中申请</text>
+                <view class="goods-num goods-num-more"></view>
+            </view>
+        </view>
+        <view class="fapiao-box" style="margin-bottom: 30rpx;">
+            <text style="font-weight: bold;">四季生活卡</text>
+            <view class="right-more-container">
+                <text style="margin-right: 10rpx;">使用</text>
+                <view class="goods-num goods-num-more">...</view>
+            </view>
+        </view>
+    </view>
+    <view class="mymsg">
+        <view class="fapiao-box" style="margin-bottom: 30rpx;">
+            <text style="font-weight: bold;">我的优惠券</text>
+            <view class="right-more-container" bind:tap="selectCoupon">
+                <text style="margin-right: 10rpx;" wx:if="{{order.couponsinfo.length == 0}}">去使用</text>
+                <text style="margin-right: 10rpx;" wx:else> - ¥{{tools.lessNum(order.couponsinfo[0].money/100)}} </text>
+                <view class="goods-num goods-num-more">...</view>
+            </view>
+        </view>
+    </view>
+    <view style="margin-bottom:120rpx" class="mymsg">
+        <view class="total-price">
+            <text style="font-weight: bold;">商品金额</text>
+            <text >¥{{tools.lessNum(order.theTotal.totalgoodprice/100)}}</text>
+        </view>
+        <view class="total-price">
+            <text style="font-weight: bold;">运费</text>
+            <text style="color:#F63A29">+ ¥{{tools.lessNum(order.theTotal.ship_fee/100)}}</text>
+        </view>
+        <view class="total-price" style="margin-bottom: 30rpx;">
+            <text style="font-weight: bold;">立减</text>
+            <text style="color:#F63A29">- ¥{{tools.lessNum(order.theTotal.totaldisprice/100)}}</text>
+        </view>
+    </view>
+    <view class="to-pay">
+        <view class="bottom-pay">
+            <view class="to-pay-price">
+                实付款
+                <text style="color:#F63A29; font-size:20px;">¥{{tools.lessNum(order.theTotal.totalprice/100)}}</text>
+            </view>
+            <view class="to-pay-btn" bindtap="buyFuc">提交订单</view>
+        </view>
+    </view>
+</view>

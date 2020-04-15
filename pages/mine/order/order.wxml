@@ -1,0 +1,81 @@
+<view class="orderBlock">
+  <wxs src="../../../service/num.wxs" module="tools" />
+  <nav title="我的订单" bind:leftFuc="goBack" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+  <view class='select_box' style="margin-top:{{capsuleTop+capsuleHeight+15}}px">
+    <view wx:for="{{selectArray}}" wx:key="{{index}}" class="item {{currentItem==item.id?'active_tag':''}}" data-id="{{item.id}}" data-title="{{item.text}}" bindtap="tagChoose">
+      {{item.text}}
+      <span class="line"></span>
+    </view>
+  </view>
+  <view wx:if="{{itemArray && itemArray.length > 0}}" class="result_box">
+    <view class="item" wx:for="{{itemArray}}" wx:key="{{index}}">
+      <view class="shop-container ">
+        <view class="indicator"/>
+        <image src="../../../images/shopping/jingdong.png" class="shop"/>
+        <text class="shop-name">{{item.shopname}}</text>
+        <!-- <view class="order-type">{{'买家待付款'}}</view> -->
+        <view class="order-type" wx:if="{{item.status == '-10'}}">交易已取消</view>
+        <view class="order-type" wx:elif="{{item.status == '-20'}}">交易已删除</view>
+        <view class="order-type" wx:elif="{{item.status == '10'}}">货到付款</view>
+        <view class="order-type" wx:elif="{{item.status == '15'}}">交易进行中</view>
+        <view class="order-type" wx:elif="{{item.status == '20'}}">买家待付款</view>
+        <view class="order-type" wx:elif="{{item.status == '30'}}">买家正在付款</view>
+        <view class="order-type" wx:elif="{{item.status == '40'}}">买家已付款</view>
+        <view class="order-type" wx:elif="{{item.status == '50'}}">卖家待发货</view>
+        <view class="order-type" wx:elif="{{item.status == '60'}}">卖家准备发货</view>
+        <view class="order-type" wx:elif="{{item.status == '65'}}">已催促发货</view>
+        <view class="order-type" wx:elif="{{item.status == '70'}}">卖家已发货</view>
+        <view class="order-type" wx:elif="{{item.status == '80'}}">交易成功</view>
+        <view class="order-type" wx:elif="{{item.status == '90'}}">退款中</view>
+        <view class="order-type" wx:elif="{{item.status == '100'}}">退款完成</view>
+        <view class="order-type" wx:elif="{{item.status == '110'}}">部分退款成功</view>
+        <view class="order-type" wx:elif="{{item.status == '120'}}">退订成功</view>
+      </view>
+      <view class="goods-container">
+        <view class="goods-piece" wx:for="{{item.goods}}" wx:for-item="good" wx:for-index="idx" bindtap="orderDetail" data-index='{{ index }}'>
+          <block>
+            <view class="goods-img-container">
+              <image src="{{good.imgs[0]}}" class="goods-img"/>
+            </view>
+            <view class="goods-info">
+              <text class="goods-name">{{good.name}}</text>
+              <text class="goods-des">{{good.description}}</text>
+              <view class="goods-price">
+                <text style="color:#F63A29;">¥{{good.price}}</text>
+                <text style="font-size:10px;">x{{good.num}}</text>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="line-space"/>
+        <view class="total-price">共{{tools.detailNum(item.goods)}}件商品，合计：¥{{item.payprice}} <text wx:if="{{item.ship_fee}}">（含运费 ¥{{tools.lessNum(item.ship_fee/100)}}）</text></view>
+        <view class="bottom-btn" wx:if="{{item.status == '10' || item.status == '15' || item.status == '20'}}">
+          <view class="btn-piece" bindtap="payorder" data-index='{{ index }}'>去付款</view>
+          <view class="btn-piece" bindtap="deleteOrder" data-index='{{ index }}'>取消订单</view>
+        </view>
+        <view class="bottom-btn" wx:elif="{{item.status == '80'}}">
+          <view class="btn-piece" bindtap="getFapiao" data-item="{{item}}" >{{item.user_ainvoice == '0' ? '开具发票' : (item.user_ainvoice == '1' ? '开票中' : '已开票')}}</view>
+          <view class="btn-piece" bindtap="pingjia" bind-item="{{item}}" data-index="{{index}}">立即评价</view>
+        </view>
+        <view class="bottom-btn" wx:elif="{{item.status == '40' || item.status == '50' || item.status == '60' || item.status == '65'}}">
+          <view class="btn-piece" bindtap="getFapiao" data-item="{{item}}" >{{item.user_ainvoice == '0' ? '开具发票' : (item.user_ainvoice == '1' ? '开票中' : '已开票')}}</view>
+          <view class="btn-piece" bindtap="changeOrder" data-item="{{item}}" data-index="{{3}}">催促发货</view>
+          <view class="btn-piece" bindtap="changeAddress" data-item="{{item}}">修改地址</view>
+        </view>
+        <view class="bottom-btn" wx:elif="{{item.status == '60' || item.status == '65' || item.status == '70'}}">
+          <view class="btn-piece" bindtap="getFapiao" data-item="{{item}}" >{{item.user_ainvoice == '0' ? '开具发票' : (item.user_ainvoice == '1' ? '开票中' : '已开票')}}</view>
+          <view class="btn-piece" bindtap="changeOrder" data-item="{{item}}" data-index="{{1}}">延长收货</view>
+          <view class="btn-piece" bindtap="changeOrder" data-item="{{item}}" data-index="{{4}}">查看物流</view>
+          <view class="btn-piece" bindtap="changeOrder" data-item="{{item}}" data-index="{{2}}">确认收货</view>
+        </view>
+        <view class="bottom-btn" wx:else>
+          <view class="btn-piece" bindtap="orderDetail" data-index='{{ index }}'>查看订单</view>
+        </view>
+      </view>
+    </view>
+  </view>
+   <view wx:else class="no-data-div">
+        <image src="/images/common/no-data.png" mode="aspectFit" class="no-data"/>
+        <view class="no-data-tips">{{noDataTips}}</view>
+    </view>
+</view>

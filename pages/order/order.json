@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "nav": "/assets/components/normalNav/normalNav",
+    "buy-item": "/assets/components/buyItem/buyItem"
+  }
+}

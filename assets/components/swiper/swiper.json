@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "image-loader": "/assets/components/imageLoader/pre-load"
+  }
+}

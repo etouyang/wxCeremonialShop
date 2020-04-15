@@ -1,0 +1,57 @@
+<view class="orderBlock">
+  <wxs src="../../../service/num.wxs" module="tools" />
+  <nav title="售后/退款" bind:leftFuc="goBack" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+  <view class="result_box" style="margin-top:{{capsuleTop+capsuleHeight+15}}px">
+    <view class="item" wx:for="{{itemArray}}" wx:key="{{index}}">
+      <view class="shop-container ">
+        <view class="indicator"/>
+        <image src="../../../images/shopping/jingdong.png" class="shop"/>
+        <text class="shop-name">{{item.shopname}}</text>
+        <!-- <view class="order-type">{{'买家待付款'}}</view> -->
+        <view class="order-type" wx:if="{{item.status == '20'}}">买家待付款</view>
+        <view class="order-type" wx:elif="{{item.status == 3}}">交易成功</view>
+        <view class="order-type" wx:elif="{{item.status == '40'}}">买家已付款</view>
+        <view class="order-type" wx:elif="{{item.status == 6}}">卖家已发货</view>
+        <view class="order-type" wx:else>交易成功</view>
+      </view>
+      <view class="goods-container">
+        <view class="goods-piece" wx:for="{{item.goods}}" wx:for-item="good" wx:for-index="idx">
+          <block>
+            <view class="goods-img-container">
+              <image src="{{good.imgs[0]}}" class="goods-img"/>
+            </view>
+            <view class="goods-info">
+              <text class="goods-name">{{good.name}}</text>
+              <text class="goods-des">{{good.description}}测试</text>
+              <view class="goods-price">
+                <text style="color:#F63A29;">¥{{good.price}}</text>
+                <text style="font-size:10px;">x{{good.num}}</text>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="line-space"/>
+        <view class="total-price">共{{tools.detailNum(item.goods)}}件商品，合计：¥{{item.payprice}} <text wx:if="{{item.ship_fee}}">（含运费 ¥{{tools.lessNum(item.ship_fee/100)}}）</text></view>
+        <view class="bottom-btn" wx:if="{{item.status == '20'}}">
+          <view class="btn-piece" bindtap="payorder" data-index='{{ index }}'>去付款</view>
+          <view class="btn-piece" >取消订单</view>
+        </view>
+        <view class="bottom-btn" wx:elif="{{item.status == 3}}">
+          <view class="btn-piece">立即评价</view>
+        </view>
+        <view class="bottom-btn" wx:elif="{{item.status == '40'}}">
+          <view class="btn-piece">催促发货</view>
+          <view class="btn-piece">修改地址</view>
+        </view>
+        <view class="bottom-btn" wx:elif="{{item.status == 6}}">
+          <view class="btn-piece">延长收货</view>
+          <view class="btn-piece">查看物流</view>
+          <view class="btn-piece">确认收货</view>
+        </view>
+        <view class="bottom-btn" wx:else>
+          <view class="btn-piece" bindtap="orderDetail" data-index='{{ index }}'>查看订单</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

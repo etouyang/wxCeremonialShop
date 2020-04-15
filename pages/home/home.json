@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "my-swiper": "/assets/components/swiper/swiper",
+    "service-module": "/assets/components/service-module/service-module",
+    "search": "/assets/components/searchBox/index",
+    "goods-item": "/assets/components/goodsItem/goodsItem",
+    "group-item": "/assets/components/groupItem/groupItem",
+    "group-title": "/assets/components/groupTitle/groupTitle",
+    "image-loader": "/assets/components/imageLoader/pre-load",
+    "address-picker": "/assets/components/addressPicker/addressPicker"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

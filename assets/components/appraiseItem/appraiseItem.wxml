@@ -1,0 +1,22 @@
+<view class="appraiseWrap">
+    <view class="nameContainer">
+        <image class="head" src="{{item.uimg}}" mode="aspectFit"/>
+        <view class="name">{{item.nickname}}</view>
+        <view class="starContainer">
+            <view wx:for="{{stars}}" wx:key="" wx:for-item="star">
+                <image src="{{star === 1 ? '/images/goods/star.png' : '/images/goods/starGray.png'}}" class="star" />
+            </view>
+        </view>
+        <view class="time">{{time}}</view>
+    </view>
+    <view class="des">
+        <view class="container">
+            {{item.content}}
+        </view>
+        <view class="imgContainer">
+            <!-- <view wx:for="{{imgUrls}}" wx:key=""> -->
+                <image src="{{item.thumb}}" class="image"/>
+            <!-- </view> -->
+        </view>
+    </view>
+</view>

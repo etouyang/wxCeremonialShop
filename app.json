@@ -1,0 +1,94 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/prolist/prolist",
+    "pages/shopping/shopping",
+    "pages/mine/mine",
+    "pages/mine/myAssets/coupon/coupon",
+    "pages/mine/myAssets/redpacket/redpacket",
+    "pages/mine/myAssets/recharge/recharge",
+    "pages/mine/myAssets/accountdetails/accountdetails",
+    "pages/mine/order/order",
+    "pages/mine/myList/twitter/twitter",
+    "pages/mine/myList/takeout/takeout",
+    "pages/mine/myList/address/address",
+    "pages/mine/myList/news/news",
+    "pages/mine/myList/problem/problem",
+    "pages/mine/set/set",
+    "pages/search/search",
+    "pages/second/second",
+    "pages/group/group",
+    "pages/paySucc/paySucc",
+    "pages/goodsDetail/goodsDetail",
+    "pages/groupDetail/groupDetail",
+    "pages/secondDetail/secondDetail",
+    "assets/components/service-module/service-module",
+    "pages/order/order",
+    "pages/login/login",
+    "pages/loginCode/loginCode",
+    "pages/mine/myList/addAddress/addAddress",
+    "pages/shopStore/shopStore",
+    "pages/mine/orderDetail/orderDetail",
+    "pages/mine/orderFollow/orderFollow",
+    "pages/shopCoupon/shopCoupon",
+    
+    "pages/hotGoods/hotGoods",
+    "pages/message/message",
+    "pages/mine/myAssets/hongbao/hongbao",
+    "pages/pingjia/pingjia",
+    "pages/mine/refund/refund",
+    "pages/recharge/recharge",
+    "pages/mine/fapiao/fapiao",
+    "pages/mine/fapiaomore/fapiaomore",
+    "pages/location/location",
+    "pages/locationDetail/locationDetail",
+    "pages/season/season",
+    "pages/seasonList/seasonList",
+    "pages/payRes/payRes"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle":"custom"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "images/nav/home_n.png",
+        "selectedIconPath": "images/nav/home_s.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/prolist/prolist",
+        "iconPath": "images/nav/cat_n.png",
+        "selectedIconPath": "images/nav/cat_s.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/shopping/shopping",
+        "iconPath": "images/nav/shop_n.png",
+        "selectedIconPath": "images/nav/shop_s.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/nav/me_n.png",
+        "selectedIconPath": "images/nav/me_s.png",
+        "text": "我"
+      }
+    ],
+    "color": "#333333",
+    "selectedColor": "#F63220"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于推荐商品展示"
+    }
+  }
+}

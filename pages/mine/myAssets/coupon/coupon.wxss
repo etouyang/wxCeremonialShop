@@ -1,0 +1,59 @@
+@import '../../../../assets/style/title/title.wxss';
+page {
+  background-color: #F4F4F4;
+}
+.couponBlock {
+  display: flex;
+  flex-direction: column;
+  background-color: #F4F4F4;
+}
+.couponBlock .select_box {
+  display: flex;
+  height: 88rpx;
+}
+
+.couponBlock .select_box .item {
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 15px;
+  color: #999;
+}
+
+.couponBlock .select_box .active_tag {
+  position: relative;
+  color: #F24842;
+  font-size: 17px;
+}
+
+.couponBlock .select_box .active_tag .line {
+  position: absolute;
+  bottom: 0;
+  left: 100rpx;
+  right: 100rpx;
+  height: 10rpx;
+  border-radius: 5rpx;
+  background: linear-gradient(to right, #FC8259, #F24842);
+}
+
+.couponBlock .result_box {
+}
+
+.couponBlock .result_box .noneBox {
+  margin-top: 300rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.couponBlock .result_box .noneBox image {
+  width: 248rpx;
+  height: 248rpx;
+}
+
+.couponBlock .result_box .noneBox .text {
+  font-size: 28rpx;
+  color: #999;
+}

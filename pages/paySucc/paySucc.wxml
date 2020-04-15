@@ -1,0 +1,41 @@
+<view class="container">
+    <wxs src="../../service/num.wxs" module="tools" />
+    <nav title="支付成功" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#fff" leftImg="/images/nav/back-w.png" rightImg="/images/shopping/ico-ting-w.png"/>
+    <view class="view-container" style="margin-top:{{capsuleTop+capsuleHeight}}px">
+        <view class="head-container" bindtap="getHongbao">
+            <image src="/images/goods/hongbao.png" class="headImg" />
+            <text class="headTitle">太棒啦，您已成功支付给您奖励红包啦</text>
+        </view>
+        <view class="order-container">
+            <image src="/images/goods/pic-line.png" class="lineImg"/>
+            <view class="order">
+                <view class="opacity"/>
+                <text class="title">您的订单</text>
+                <view class="piece" style="margin-top:30rpx;">
+                    <text class="leftTitle">收货人</text>
+                    <text class="rightTitle">{{paysucc.adress.uname}}</text>
+                </view>
+                <view class="piece">
+                    <text class="leftTitle">收货地址</text>
+                    <text class="rightTitle">{{paysucc.adress.detail}}</text>
+                </view>
+                <view class="piece">
+                    <text class="leftTitle">实付款</text>
+                    <text class="rightTitle">¥{{tools.lessNum(money/100)}}</text>
+                </view>
+                <block wx:for="{{paysucc.data}}" wx:key="unique">
+                    <view class="piece">
+                        <text class="leftTitle">订单编号</text>
+                        <text class="rightTitle">{{item.orderid}}</text>
+                    </view>
+                </block>
+                <view class="bottomTitle" wx:if="{{paysucc.data.length > 1}}">您的订单由不同商家发货，已拆分为 {{paysucc.data.length}} 个订单</view>
+                <view class="bottom-white"/>
+            </view>
+        </view>
+        <view class="bottom-btn-container">
+          <view class="show-order" bindtap="orderDetail" style="margin-left:{{(width-330-16)/2}}px">查看订单</view>
+          <button class="share-order" open-type="share">分享晒单</button>
+        </view>
+    </view>
+</view>

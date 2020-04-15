@@ -1,0 +1,16 @@
+<view class="setBlock">
+  <view class='back_box' bindtap='goBack'>
+    <image bindtap='goBack'  class="icon" src='../../../images/nav/back.png' alt=""></image>
+    <span>用户中心</span>
+  </view>
+
+  <view class="set_content">
+  
+  <view class="logout_box" bindtap='logout'>
+    <image class="icon"   class="icon" src='../../../images/mine/man.png' alt=""></image>
+    切换账户
+  </view>
+  
+  </view>
+
+</view>

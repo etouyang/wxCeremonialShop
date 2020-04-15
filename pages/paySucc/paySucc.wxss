@@ -1,0 +1,128 @@
+page {
+    padding: 0;
+}
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #5D7EFD, #FF36BB);
+}
+.view-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.head-container {
+    width: 100%;
+    height: 660rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.headImg {
+    width: 440rpx;
+    height: 640rpx;
+}
+.headTitle {
+  width: 280rpx;
+  color: #FBB888;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  top: 400rpx;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+}
+.order-container {
+    width: calc( 100% - 20rpx );
+    margin-left: 10rpx;
+}
+.lineImg {
+    width: 100%;
+    height: 28rpx;
+    margin-bottom: -10rpx;
+}
+.order {
+    position: relative;
+    width: calc( 100% - 40rpx );
+    margin-top: -15rpx;
+    margin-left: 20rpx;
+    background-color: #fff;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+}
+.opacity {
+    width: 100%;
+    height: 24rpx;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0));
+}
+.title {
+    font-size: 14px;
+    color: #111111;
+    font-weight: 500;
+    margin-left: 30rpx;
+}
+.piece {
+    width: calc( 100% - 60rpx );
+    margin-left: 30rpx;
+    margin-bottom: 30rpx;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.leftTitle {
+  color: #111111;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.rightTitle {
+  color: #333333;
+  font-weight: 400;
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+.bottomTitle {
+  color: #F63A29;
+  font-size: 13px;
+  margin-left: 30rpx;
+}
+.bottom-white {
+  width: 100%;
+  height: 50rpx;
+}
+.bottom-btn-container {
+  width: 100%;
+  height: 250rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.show-order {
+  width: 330rpx;
+  height: 76rpx;
+  border-radius: 38rpx;
+  color: #fff;
+  font-size: 15px;
+  background: linear-gradient(to right, #FC8259, #F24842);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.share-order {
+  width: 330rpx;
+  height: 76rpx;
+  margin-left: 32rpx;
+  border-radius: 38rpx;
+  color: #fff;
+  font-size: 15px;
+  background: linear-gradient(to right, #597DFC, #D6038D);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

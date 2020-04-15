@@ -1,0 +1,24 @@
+<view class="timesWrap">
+    <view class="timeContainer">
+        <scroll-view class="itemsContainer" scroll-x>
+            <view class="itemFor">
+                <view wx:for="{{times}}" class="item">
+                    <view wx:if="{{index != currentIdx}}" class="itemClosed" data-index="{{index}}"  bindtap="selectIdx">
+                        <view class="itemTitle">{{item.time}}<text wx:if="{{item.time !== ' '}}">:00</text></view>
+                        <view class="itemSubTitle">{{item.des}}</view>
+                    </view>
+                    <view wx:else class="itemNow">
+                        <view class="itemTitleNow">{{item.time}}<text wx:if="{{item.time !== ' '}}">:00</text></view>
+                        <view class="itemSubTitleNow">{{item.des}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="lastTime">
+        <view class="lastTimeShow">
+            <text wx:if="{{timerDes !== '已结束' && timerDes !== '即将开始' && timerDes !== ''}}" space="nbsp">{{'还剩 '}}</text>
+            {{timerDes}}
+        </view>
+    </view>
+</view>

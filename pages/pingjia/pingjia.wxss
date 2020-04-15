@@ -1,0 +1,184 @@
+page {
+    background-color: #F4F4F4;
+}
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.view-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.share {
+    width: calc( 100% - 60rpx );
+    margin: 30rpx;
+    /* height: 520rpx; */
+    border-radius: 10rpx;
+    background-color: #fff;
+    box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+}
+.star-container {
+    width: calc( 100% - 60rpx );
+    height: 120rpx;
+    margin-left: 30rpx;
+    border-bottom: 1px solid #F4F4F4;
+    display: flex;
+    align-items: center;
+}
+.good-img {
+    width: 60rpx;
+    height: 60rpx;
+}
+.stars-img {
+    height: 100%;
+    margin-left:30rpx;
+    display: flex;
+    align-items: center;
+}
+.star-img {
+    width: 56rpx;
+    height: 56rpx;
+    margin-right: 40rpx;
+}
+.star-des {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 15px;
+    color: #999999;
+}
+.share-des {
+    width: calc( 100% - 60rpx );
+    margin: 40rpx 0 30rpx 30rpx;
+    height: 95rpx;
+    font-size: 15px;
+}
+.photo-imgs {
+    width: 100%;
+    /* margin-left: 30rpx; */
+    border-bottom: 1px solid #F4F4F4;
+    display: flex;
+    align-items: center;
+}
+.local-photo {
+    width: 130rpx;
+    height: 130rpx;
+}
+.pingjia-btn {
+  width: calc( 100% - 60rpx );
+  height: 74rpx;
+  margin-left: 30rpx;
+  border-radius: 37rpx;
+  color: #fff;
+  font-size: 15px;
+  background: linear-gradient(to right, #FC8259, #F24842);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.noname {
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    margin-left: 30rpx;
+}
+.express-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+/* checkbox未选中时样式  */
+checkbox .wx-checkbox-input{
+    border-radius: 50%;
+    height: 34rpx;
+    width: 34rpx;
+    margin-top: -4rpx;
+   /* 自定义样式.... */
+   
+}
+/* checkbox选中时样式 */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+    background: #FF6C5E;
+    border: 1px solid #FF6C5E;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+    border-radius: 50%;/* 圆角 */
+    width: 34rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+    height: 34rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+    line-height: 34rpx;
+    text-align: center;
+    font-size:23rpx; /* 对勾大小 30rpx */
+    color:#fff; /* 对勾颜色 白色 */
+    background: transparent;
+    transform:translate(-48%, -48%) scale(1);
+    -webkit-transform:translate(-48%, -48%) scale(1);
+ }
+
+/* uploader */
+.ui_uploader_cell {
+    width: 100%;
+    margin-left: 30rpx;
+    box-sizing: border-box;
+}
+.ui_uploader_item{
+    float: left;
+    position: relative;
+    margin-right: 30rpx;
+    margin-bottom: 30rpx;
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+}
+.ui_uploader {
+    float: left;
+    position: relative;
+    margin-right: 25rpx;
+    margin-bottom: 25rpx;
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+    border: 2rpx solid #d9d9d9;
+    box-sizing: border-box;
+}
+
+.ui_uploader:before {
+    content: " ";
+    position: absolute;
+    width: 4rpx;
+    height: 79rpx;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #d9d9d9;
+}
+
+.ui_uploader:after {
+    content: " ";
+    position: absolute;
+    height: 4rpx;
+    width: 79rpx;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #d9d9d9;
+}
+.ui_uploader_item_icon{
+    position: absolute;
+    right: 3rpx;
+    top: 0rpx;
+    background: #fff;
+    border-radius: 50%;
+}
+.ui_uploader_item image {
+    width: 100%;
+    height: 100%;
+}

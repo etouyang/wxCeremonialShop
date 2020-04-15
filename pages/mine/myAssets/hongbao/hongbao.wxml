@@ -1,0 +1,23 @@
+<view class="hongbaoBlock">
+  <nav title="红包" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+  <view class="select_box" style="margin-top:{{capsuleTop+capsuleHeight}}px" >
+    <view wx:for="{{selectArray}}" class="item {{currentItem==item.id?'active_tag':''}}" data-id="{{item.id}}" bindtap="tagChoose">
+      {{item.text}}
+      <span class="line"></span>
+    </view>
+  </view>
+  <view class='result_box' wx:if="{{hongbao.length == 0}}">
+    <view class='noneBox'>
+      <image src='../../../../images/mine/none.png'></image>
+      <view class='text'>暂无红包</view>
+    </view>
+  </view>
+  <view wx:else class='result_box'>
+    <block wx:for="{{hongbao}}">
+      <hongbao item="{{item}}" wx:if="{{currentItem == 1}}" type="unUsed"/>
+      <hongbao item="{{item}}" wx:elif="{{currentItem == 2}}" type="used"/>
+      <hongbao item="{{item}}" wx:else type="outTime"/>
+    </block>
+  </view>
+
+</view>

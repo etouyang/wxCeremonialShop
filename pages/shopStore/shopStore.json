@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "search": "/assets/components/searchBox/index",
+    "goods-item": "/assets/components/goodsItem/goodsItem",
+    "group-item": "/assets/components/groupItem/groupItem",
+    "nav": "/assets/components/normalNav/normalNav",
+    "my-swiper": "/assets/components/swiper/swiper"
+  }
+}

@@ -1,0 +1,59 @@
+<view >
+  <wxs src="../../../service/num.wxs" module="tools" />
+  <view class='back_box' bindtap='goBack' style="height:{{capsuleTop+capsuleHeight}}px;">
+    <image bindtap='goBack' class="icon" src='../../../images/nav/back.png' alt=""></image>
+    <span>订单信息</span>
+  </view>
+  <view class="box" >
+    <view >订单号: {{orderinfo.orderid}}</view>
+    <view >订单总金额: <text class="lightColor">¥{{tools.lessNum(orderinfo.totalprice/100)}}</text></view>
+    <view >支付金额: <text class="lightColor">¥{{tools.lessNum(orderinfo.payprice/100)}}</text></view>
+    <view >支付方式: 微信</view>
+    <view wx:if="{{orderinfo.usercode}}">推客邀请码: {{orderinfo.usercode}}</view>
+    <view class="details_btn">
+        <view class="btn" bindtap="orderFollow">订单跟踪</view>
+    </view>
+  </view>
+  <view class="box">
+      <view wx:for="{{products}}">
+        <view class="shop">
+            <text >{{item.shopname}}</text>
+            <text class="lightColor" >{{orderinfo.ordermsg}}</text>
+        </view>
+        <view wx:for="{{item.goods}}" wx:for-item="itemgood" wx:for-index="indexgood">
+            <view class="goods">
+                <image class="goods-img" src="{{itemgood.imgs[0]}}" />
+                <view class="goods-name">{{itemgood.name}}</view>
+                <view class="goods-price">
+                    <view class="lightColor" style="justify-content:flex-end;display:flex">¥{{tools.lessNum(itemgood.totalprice/100)}}</view>
+                    <view style="justify-content:flex-end;display:flex">x{{itemgood.num}}</view>
+                </view>
+            </view>
+        </view>
+      </view>
+  </view>
+  <view class="box" style="display:flex;">
+    <view class="location-container">
+        <image src="/images/common/location-order.png" class="location"/>
+    </view>
+    <view >
+        <view class="shop" style="margin-bottom:10rpx">
+            <text >收货人{{addressinfo.uname}}</text>
+            <text >{{addressinfo.phone}}</text>
+        </view>
+        <view >地址: {{addressinfo.address}}</view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="shop">
+        <text >付款方式</text>
+        <text >微信</text>
+    </view>
+    <view class="shop" style="border-bottom: none">
+        <text >配送方式</text>
+        <text >商家配送</text>
+    </view>
+    <view >订单编号: {{orderinfo.orderid}}</view>
+    <view >创建时间: {{orderinfo.ordertime}}</view>
+  </view>
+</view>

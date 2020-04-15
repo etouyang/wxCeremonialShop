@@ -1,0 +1,28 @@
+<view class="orderBlock">
+  <wxs src="../../service/num.wxs" module="tools" />
+  <nav title="在线充值" bind:leftFuc="goBack" bind:rightFuc="rightFuc" titleStyle="#000" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+  <view class="recharge-container" style="margin-top:{{capsuleTop+capsuleHeight+15}}px">
+    <view class="recharge-top">
+      <text style="font-size:15px;color:#999">充值金额:</text>
+      <view style="flex:1;display:flex;justify-content:flex-end">
+        <input type='number' value="{{money}}" bindinput="moneyInput" class="moneyInput" />
+        <text style="font-size:10px;color:#F24842;align-items:flex-end;display:flex">元</text>
+      </view>
+    </view>
+    <view >
+      <text class="recharge-way">充值方式</text>
+      <view class="wx-content">
+        <image src="/images/common/pay-wx.png" class="wxImg"/>
+        <text style="margin-left:30rpx">微信支付</text>
+        <view class="check-content">
+          <checkbox-group bindchange="switchChange" >
+            <checkbox checked="true"/>
+          </checkbox-group>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="add-address">
+    <view class="btn" bindtap="rechargeMoney">立即充值</view>
+  </view>
+</view>

@@ -1,0 +1,128 @@
+@import '../../../../assets/style/title/title.wxss';
+page {
+  background-color: #F4F4F4;
+  height: 100%;
+}
+.problemBlock {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+}
+.problem_content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+}
+.problem_content .form-box {
+  width: calc( 100% - 60rpx );
+  height: 950rpx;
+  margin: 30rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+}
+.problem_content .form-box .item {
+  width: calc( 100% - 60rpx );
+  height: 110rpx;
+  margin: 0 30rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+
+.problem_content .form-box .item .platform {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  color: #999999;
+}
+.problemBlock .form-box .item .input{
+  height: 100%;
+  line-height: 80rpx;
+  font-size: 15px;
+}
+.problemBlock .submit {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+.btn {
+  height: 76rpx;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 15rpx;
+  border-radius: 38rpx;
+  background: linear-gradient(to right, #FC8259, #F24842);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn::after {
+  border-radius: 38rpx;
+  border: 0; 
+}
+.problemBlock .textarea-wrp {
+  width: calc( 100% - 60rpx );
+  height: 400rpx;
+  margin: 30rpx;
+}
+.problemBlock .textarea-wrp textarea{
+  font-size: 15px;
+  height: 340rpx;
+}
+.problemBlock .wordNum {
+  display: flex;
+  width: calc( 100% - 60rpx );
+  margin-left: 30rpx;
+  justify-content: flex-end;
+  color: #999999;
+  font-size: 12px;
+}
+.problemBlock .radio_box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.problemBlock .radio_box label:nth-child(1) {
+  margin-right: 60rpx;
+}
+
+.problemBlock .input_box {
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding-left: 20rpx;
+}
+.problemBlock .submit_box{
+  position: absolute;
+  bottom: 20rpx;
+  width: calc( 100% - 60rpx );
+  left: 30rpx;
+  height: 76rpx;
+}
+
+radio .wx-radio-input{
+  border-radius: 50%;
+  height: 34rpx;
+  width: 34rpx;
+  margin-top: -4rpx; 
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  background: #FF6C5E !important;
+  border: 1px solid #FF6C5E !important;
+}
+radio .wx-radio-input.wx-radio-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 34rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 34rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 34rpx;
+  text-align: center;
+  font-size:23rpx; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-48%, -48%) scale(1);
+  -webkit-transform:translate(-48%, -48%) scale(1);
+}

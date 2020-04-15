@@ -1,0 +1,204 @@
+page {
+    background-color: #F4F4F4;
+    padding: 0;
+}
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: #F4F4F4;
+}
+.mymsg {
+    margin: 28rpx 28rpx 0;
+    border-radius: 20rpx;
+    width: calc( 100% - 60rpx );
+    background-color: #fff;
+    box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+}
+.getPeople {
+    margin: 16rpx 0 0 28rpx;
+    color: #333333;
+    font-size: 14px;
+}
+.getName {
+    margin: 22rpx 28rpx 0;
+    color: #F63A29;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+.getAddress {
+    margin: 22rpx 40rpx 30rpx 28rpx;
+    width: calc( 100% - 80rpx );
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: normal;
+    color: #333333;
+    font-size: 14px;
+    /* height: 80rpx; */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2
+}
+.payway {
+    display: flex;
+    margin: 28rpx 28rpx 0;
+    padding: 0 22rpx; 
+    width: calc( 100% - 28rpx * 2 - 22rpx * 2 );
+    border-radius: 20rpx;
+    height: 88rpx;
+    color: #333333;
+    font-size: 14px;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 2rpx 6px -2rpx rgba(0, 0, 0, 0.1);
+}
+.goods-box-head {
+    margin: 22rpx 30rpx 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    display: flex;
+    align-items: center;
+}
+.goods-box-head-img {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 16rpx;
+}
+.goods-box-img {
+    display: flex;
+    flex-direction: row;
+    margin: 22rpx 30rpx 0;
+}
+.goods-box-img-content {
+    width: 432rpx;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.goods-box-img-piece {
+    width: 108rpx;
+    height: 108rpx;
+    margin-right: 10rpx;
+}
+.goods-num {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 12px;
+    color: #333333;
+}
+.goods-num-title-content {
+    flex: 1;
+    margin-right: 20rpx;
+}
+.goods-num-more {
+    width: 30rpx;
+    margin-top: -10rpx;
+}
+.send-address-provide {
+    height: 72rpx;
+    margin: 0 30rpx 0;
+    display: flex;
+    flex-direction: row;
+}
+.address-box {
+    flex: 1;
+    margin-right: 20rpx;
+}
+.address-title-head {
+    display: flex;
+    justify-content: space-between;
+}
+.address-title {
+    color: #333333;
+    font-size: 13px;
+    font-weight: bold;
+}
+.address-title-des {
+    color: #333333;
+    font-size: 13px;
+}
+.address-title-more {
+    color: #333333;
+    font-size: 13px;
+    display: flex;
+    justify-content: flex-end;
+}
+.re-back {
+    margin: 40rpx 30rpx 0;
+    color: #333333;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.leave-message {
+    margin: 40rpx 30rpx 40rpx;
+    color: #333333;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+}
+.leave-message-input {
+    width: calc( 100% - 150rpx );
+    margin-left: 50rpx;
+}
+.fapiao-box {
+    margin: 30rpx 28rpx 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #333333;
+    font-size: 13px;
+}
+.right-more-container {
+    display: flex;
+    flex-direction: row;
+}
+.total-price {
+    margin: 30rpx 30rpx 0;
+    color: #333333;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.to-pay {
+    margin-top: 46rpx;
+    width: 100%;
+    height: 100rpx;
+    background-color: #FFFFFF;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.bottom-pay {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.to-pay-price {
+    color: #1A1A1A;
+    font-size: 12px;
+    margin-left: 56rpx;
+}
+.to-pay-btn {
+    width: 220rpx;
+    height: 76rpx;
+    margin-right: 30rpx;
+    border-radius: 38rpx;
+    background: linear-gradient(to right, #FC8259, #F24842);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 15px;
+}

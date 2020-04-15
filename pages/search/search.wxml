@@ -1,0 +1,52 @@
+<view class="container">
+    <nav title="" bind:leftFuc="leftFuc" bind:rightFuc="rightFuc" titleStyle="#fff" leftImg="/images/nav/back.png" rightImg="/images/shopping/ico-ting-d.png"/>
+    <search 
+        class="searchContainer" 
+        searchflag = "{{true}}"
+        rightTxtFlag = "{{true}}"
+        searchstr="{{searchstr}}" 
+        bind:searchList="searchList" 
+        bind:endsearchList="endsearchList" 
+        bind:search="search" 
+        bind:activity_clear="activity_clear" 
+        style="margin-top:{{capsuleTop + capsuleHeight + 10}}px"
+    />
+    <view wx:if="{{search.products.length}}">
+        <view class="shop-container-detail">
+            <view class="shop-container-item">
+                <view wx:for="{{productsLeft}}"  wx:key="{{index}}" class="shop-left-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                </view>
+            </view>
+            <view class="shop-container-item">
+                <view wx:for="{{productsRight}}"  wx:key="{{index}}" class="shop-right-item">
+                    <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="showImg">
+            <image class="img" src="/images/common/pic-s1.png"/>
+            <text class="imgTitle" wx:if="{{searchstr.length > 0 && loading == true}}">抱歉,暂时未找到与"<text class="keyword">{{searchstr}}</text>"相关的产品</text>
+            <text class="imgTitle" wx:elif="{{searchstr.length == 0 && loading == true}}">抱歉, 此分类暂无商品</text>
+            <text class="imgTitle" wx:else>加载中...</text>
+        </view>
+        <view class="home-shop-group" wx:if="{{loveGoods.length}}">
+            <group-title class="time-get" type="{{'detail'}}" title="{{'为您推荐'}}" />
+            <view class="shop-container-detail">
+                <view class="shop-container-item">
+                    <view wx:for="{{loveLeft}}"  wx:key="{{index}}" class="shop-left-item">
+                        <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                    </view>
+                </view>
+                <view class="shop-container-item">
+                    <view wx:for="{{loveRight}}"  wx:key="{{index}}" class="shop-right-item">
+                        <goods-item  data-bindex='{{index}}' bind:onJumpDetail="onJumpDetail" item="{{item}}"/>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>
